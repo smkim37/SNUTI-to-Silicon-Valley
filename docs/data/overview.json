@@ -1,0 +1,290 @@
+{
+  "meta": {
+    "title": "SNUTI to Silicon Valley",
+    "subtitle": "전체 일정 개요",
+    "note": "오전/오후 방문지와 식사는 조·호차마다 다릅니다. 본인 확정 일정은 이름 검색에서 확인하세요."
+  },
+  "days": [
+    {
+      "date": "6.23",
+      "label": "6.23 (화) Day 1",
+      "slots": [
+        {
+          "slot": "점심",
+          "options": [
+            "스탠포드",
+            "스테이크"
+          ]
+        },
+        {
+          "slot": "석식",
+          "options": [
+            "인앤아웃",
+            "쌀국수",
+            "스테이크",
+            "동순원",
+            "OT준비"
+          ]
+        }
+      ],
+      "memos": [],
+      "common": [
+        {
+          "time": "19:30–20:30",
+          "title": "오리엔테이션",
+          "place": "Grand Ballroom"
+        },
+        {
+          "time": "20:30–21:30",
+          "title": "네트워킹",
+          "place": "Grand Ballroom"
+        }
+      ]
+    },
+    {
+      "date": "6.24",
+      "label": "6.24 (수) Day 2",
+      "slots": [
+        {
+          "slot": "오전",
+          "options": [
+            "PnP",
+            "망고부스트",
+            "조비",
+            "애플"
+          ]
+        },
+        {
+          "slot": "중식",
+          "options": [
+            "쌀국수",
+            "스테이크",
+            "인앤아웃",
+            "동순원",
+            "SK Hy 중식"
+          ]
+        },
+        {
+          "slot": "오후",
+          "options": [
+            "블룸에너지",
+            "NVIDIA",
+            "PnP",
+            "세일즈포스",
+            "SK Hynix",
+            "SK, 엔비디아 드랍"
+          ]
+        },
+        {
+          "slot": "석식",
+          "options": [
+            "쌀국수",
+            "스테이크",
+            "동순원",
+            "인앤아웃"
+          ]
+        }
+      ],
+      "memos": [
+        "호텔 차량교체",
+        "중식 후\n호텔 대기 후\n바로 \n세일즈포스 \n이동",
+        "및 마트"
+      ],
+      "common": [
+        {
+          "time": "06:00–08:40",
+          "title": "호텔 조식",
+          "place": null
+        },
+        {
+          "time": "19:30–20:30",
+          "title": "Education in AI Era",
+          "place": "Grand Ballroom"
+        },
+        {
+          "time": "20:30–21:30",
+          "title": "네트워킹",
+          "place": "Grand Ballroom"
+        }
+      ]
+    },
+    {
+      "date": "6.25",
+      "label": "6.25 (목) Day 3",
+      "slots": [
+        {
+          "slot": "점심",
+          "options": [
+            "UC버클리"
+          ]
+        },
+        {
+          "slot": "석식",
+          "options": [
+            "피어39 자유식"
+          ]
+        }
+      ],
+      "memos": [],
+      "common": [
+        {
+          "time": "06:00–08:40",
+          "title": "호텔 조식",
+          "place": null
+        },
+        {
+          "time": "19:30–20:30",
+          "title": "AI-Native",
+          "place": "Grand Ballroom"
+        },
+        {
+          "time": "20:30–21:30",
+          "title": "네트워킹",
+          "place": "Grand Ballroom"
+        }
+      ]
+    },
+    {
+      "date": "6.26",
+      "label": "6.26 (금) Day 4",
+      "slots": [
+        {
+          "slot": "오전",
+          "options": [
+            "브리즈바이오",
+            "시스코",
+            "애플"
+          ]
+        },
+        {
+          "slot": "중식",
+          "options": [
+            "그레이트몰",
+            "자유식",
+            "그레이트몰자유식"
+          ]
+        },
+        {
+          "slot": "오후",
+          "options": [
+            "NVIDIA",
+            "베어로봇틱",
+            "구글",
+            "몰로코",
+            "NVIDIA, 베어"
+          ]
+        },
+        {
+          "slot": "석식",
+          "options": [
+            "스테이크",
+            "동순원",
+            "인앤아웃"
+          ]
+        }
+      ],
+      "memos": [],
+      "common": [
+        {
+          "time": "06:00–08:40",
+          "title": "호텔 조식",
+          "place": null
+        },
+        {
+          "time": "19:30–20:30",
+          "title": "Physical AI",
+          "place": "Grand Ballroom"
+        },
+        {
+          "time": "20:30–21:30",
+          "title": "네트워킹",
+          "place": "Grand Ballroom"
+        }
+      ]
+    },
+    {
+      "date": "6.27",
+      "label": "6.27 (토) Day 5",
+      "slots": [
+        {
+          "slot": "점심",
+          "options": [
+            "치폴레",
+            "호텔중식"
+          ]
+        },
+        {
+          "slot": "석식",
+          "options": [
+            "BBQ",
+            "석식"
+          ]
+        }
+      ],
+      "memos": [],
+      "common": [
+        {
+          "time": "06:00–08:40",
+          "title": "호텔 조식",
+          "place": null
+        },
+        {
+          "time": "09:00–11:30",
+          "title": "해커톤 (디자인씽킹·주제선정)",
+          "place": "Grand Ballroom"
+        },
+        {
+          "time": "12:30–16:00",
+          "title": "해커톤 본선 + 멘토링",
+          "place": "Grand Ballroom"
+        },
+        {
+          "time": "16:00–16:30",
+          "title": "발표회 (조별 4분)",
+          "place": "Grand Ballroom"
+        },
+        {
+          "time": "19:30–20:00",
+          "title": "시상식 (해커톤·전체 시상)",
+          "place": "Grand Ballroom"
+        },
+        {
+          "time": "20:00–21:00",
+          "title": "특별세션: AI 시대 창업 10년의 이야기",
+          "place": "Grand Ballroom"
+        },
+        {
+          "time": "21:00–22:00",
+          "title": "네트워킹",
+          "place": "Grand Ballroom"
+        }
+      ]
+    },
+    {
+      "date": "6.28",
+      "label": "6.28 (일) Day 6",
+      "slots": [
+        {
+          "slot": "이동",
+          "options": [
+            "공항",
+            "공창"
+          ]
+        }
+      ],
+      "memos": [],
+      "common": [
+        {
+          "time": "06:00–07:40",
+          "title": "호텔 조식",
+          "place": null
+        },
+        {
+          "time": "—",
+          "title": "공항 이동 / 출국",
+          "place": null
+        }
+      ]
+    }
+  ]
+}
