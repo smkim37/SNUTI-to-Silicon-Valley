@@ -41,5 +41,46 @@ window.App = window.App || {};
 
   D.getPerson = function (id) { return D.byId[Number(id)]; };
 
+  // 조(클러스터) 목록: 학생 1~16조 → 교수님 → 조교 → 올바른. 1회 생성 후 캐시.
+  var STAFF_ORDER = ["교수님", "조교", "올바른"];
+  var STAFF_LABEL = { "교수님": "교수님", "조교": "운영조교", "올바른": "올바른네트웍스" };
+  var STAFF_SHORT = { "교수님": "교수님", "조교": "운영조교", "올바른": "올바른" };
+
+  D.getClusters = function () {
+    if (D._clusters) return D._clusters;
+    var map = {};
+    D.people.forEach(function (p) {
+      var k = String(p.group);
+      (map[k] || (map[k] = [])).push(p);
+    });
+    var keys = Object.keys(map);
+    var numeric = keys.filter(function (k) { return /^\d+$/.test(k); })
+                      .sort(function (a, b) { return Number(a) - Number(b); });
+    var staff = STAFF_ORDER.filter(function (k) { return map[k]; });
+    var others = keys.filter(function (k) {
+      return !/^\d+$/.test(k) && STAFF_ORDER.indexOf(k) < 0;
+    });
+    var ordered = numeric.concat(staff).concat(others);
+
+    D._clusters = ordered.map(function (key) {
+      var arr = map[key];
+      var isNum = /^\d+$/.test(key);
+      var members = arr.slice().sort(function (a, b) {
+        return a.name.localeCompare(b.name, "ko");
+      }).map(function (p) {
+        return { id: p.id, name: p.name, baseBus: p.baseBus };
+      });
+      return {
+        key: key,
+        label: isNum ? (key + "조") : (STAFF_LABEL[key] || key),
+        shortLabel: isNum ? (key + "조") : (STAFF_SHORT[key] || key),
+        role: isNum ? "student" : (arr[0].role || "other"),
+        count: members.length,
+        members: members
+      };
+    });
+    return D._clusters;
+  };
+
   A.data = D;
 })(window.App);

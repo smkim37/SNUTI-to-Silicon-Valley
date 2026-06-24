@@ -53,7 +53,7 @@ window.App = window.App || {};
     var note = (ov.meta && ov.meta.note) || "";
     var days = (ov.days || []).map(dayCard).join("");
     root.innerHTML =
-      '<a class="back" href="#/">← 검색</a>' +
+      '<a class="back" href="#/">← 목록</a>' +
       '<section class="hero hero-sm">' +
         '<img class="hero-mascot sm" src="./assets/action01.png" alt="">' +
         '<h1 class="hero-title">전체 일정</h1>' +

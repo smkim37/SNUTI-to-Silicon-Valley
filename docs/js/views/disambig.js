@@ -27,7 +27,7 @@ window.App = window.App || {};
     }).join("");
 
     root.innerHTML =
-      '<a class="back" href="#/">← 검색</a>' +
+      '<a class="back" href="#/">← 목록</a>' +
       '<div class="notice">' +
         '<img class="notice-mascot" src="./assets/action01.png" alt="">' +
         "<div><b>" + esc(name) + "</b> 님이 여러 명 있어요.<br>본인의 <b>조</b>를 선택하세요.</div>" +

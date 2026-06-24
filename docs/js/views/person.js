@@ -54,7 +54,7 @@ window.App = window.App || {};
 
   function notFound() {
     return (
-      '<a class="back" href="#/">← 검색</a>' +
+      '<a class="back" href="#/">← 목록</a>' +
       '<div class="state"><img src="./assets/action03.png" alt="">' +
       '<div class="big">해당 정보를 찾을 수 없어요</div>' +
       "<div>링크가 올바른지 확인하거나 다시 검색해 주세요.</div></div>"
@@ -73,7 +73,7 @@ window.App = window.App || {};
     var days = (p.days || []).map(dayCard).join("");
 
     root.innerHTML =
-      '<a class="back" href="#/">← 검색</a>' +
+      '<a class="back" href="#/">← 목록</a>' +
       '<section class="person-head card">' +
         '<img class="celebrate" src="./assets/action05.png" alt="">' +
         '<div class="person-name">' + esc(p.name) + "</div>" +
