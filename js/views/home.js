@@ -156,7 +156,7 @@ window.App = window.App || {};
       '<div class="search-wrap">' +
         '<input id="q" class="search-input" type="search" inputmode="search" ' +
         'autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" ' +
-        'placeholder="이름 검색 (예: 김규서 · ㄱㄱㅅ)">' +
+        'placeholder="이름 검색 (예: 김첨융 · ㄱㅊㅇ)">' +
       "</div>" +
       '<div id="results" class="results"></div>' +
       buildBrowse();

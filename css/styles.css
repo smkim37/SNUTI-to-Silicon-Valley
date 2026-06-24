@@ -139,18 +139,22 @@ button{font-family:inherit}
 .person-head{
   position:relative;overflow:hidden;
   display:flex;flex-direction:column;justify-content:center;
-  min-height:96px;
-  padding:18px 112px 18px 18px;   /* 오른쪽: 마스코트 공간 확보(텍스트 겹침 방지) */
+  min-height:80px;
+  padding:12px 124px 12px 18px;   /* 오른쪽: 마스코트 공간 확보(텍스트 겹침 방지) */
   margin-bottom:14px;text-align:left;
 }
 .person-head .celebrate{
-  position:absolute;right:14px;top:50%;transform:translateY(-50%);  /* 박스 내 오른쪽·세로 중앙 */
-  width:92px;height:auto;opacity:.95;pointer-events:none;
+  position:absolute;right:12px;top:50%;transform:translateY(-50%);  /* 박스 내 오른쪽·세로 중앙 */
+  width:110px;height:auto;opacity:.95;pointer-events:none;
 }
-.person-name{font-size:1.9rem;font-weight:800;letter-spacing:-.02em}
+.person-name{font-size:1.9rem;font-weight:800;letter-spacing:-.02em;line-height:1.15}
 .person-alias{color:var(--muted);font-size:.95rem;margin-top:2px}
-.person-head .chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.person-head .chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
 .person-head .chip{font-size:.9rem;padding:6px 12px}
+@media (max-width:359px){
+  .person-head{padding-right:104px}
+  .person-head .celebrate{width:92px;right:10px}
+}
 
 .legend{
   font-size:.85rem;color:var(--teal-dark);background:var(--teal-soft);
