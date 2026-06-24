@@ -207,8 +207,21 @@ button{font-family:inherit}
 .bus--x{background:#64748b}   /* 그 외 · 회색 */
 .bus-free{flex:none;font-size:.78rem;font-weight:600;color:var(--muted)}
 
-/* ---- 개인 카드 내 전체 일정(overview program) 섹션 ---- */
-.day-program{border-top:1px dashed var(--line);padding-bottom:6px}
+/* ---- 개인 카드 내 전체 일정(overview program) — 접기/펼치기 토글 ---- */
+.day-program{border-top:1px dashed var(--line)}
+.day-program[open]{padding-bottom:6px}
+.dp-toggle{
+  list-style:none;cursor:pointer;user-select:none;
+  display:flex;align-items:center;gap:6px;
+  padding:11px 16px;
+  font-size:.8rem;font-weight:800;color:var(--muted);letter-spacing:.03em;
+}
+.dp-toggle::-webkit-details-marker{display:none}
+.dp-toggle::marker{content:""}
+.dp-toggle:active{background:var(--bg-soft)}
+.dp-chev{margin-left:auto;font-size:1.15rem;font-weight:700;color:var(--teal);
+  line-height:1;transition:transform .18s ease}
+.day-program[open] .dp-chev{transform:rotate(90deg)}
 
 /* ---- Overview ---- */
 .ov-day{margin-bottom:16px;padding:0;overflow:hidden}
@@ -220,7 +233,6 @@ button{font-family:inherit}
   font-size:.92rem;font-weight:600;background:var(--teal-soft);color:var(--teal-dark);
   padding:6px 12px;border-radius:999px;
 }
-.ov-section-title{font-size:.78rem;font-weight:800;color:var(--muted);padding:12px 16px 0;letter-spacing:.03em}
 
 /* ---- 사전교육 ---- */
 .pt-card{margin-bottom:16px}

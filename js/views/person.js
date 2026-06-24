@@ -46,8 +46,8 @@ window.App = window.App || {};
     var items = (d.items || []).map(itemRow).join("");
     var program = A.data.programByDate[d.date] || [];
     var programHtml = (program.length && A.render)
-      ? '<div class="day-program"><div class="ov-section-title">전체 일정</div>' +
-        program.map(A.render.programBlock).join("") + "</div>"
+      ? '<details class="day-program"><summary class="dp-toggle">전체 일정<span class="dp-chev">›</span></summary>' +
+        program.map(A.render.programBlock).join("") + "</details>"
       : "";
     return (
       '<section class="day card">' +
