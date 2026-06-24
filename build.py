@@ -105,6 +105,39 @@ COMMON_SCHEDULE = OrderedDict([
     ]}),
 ])
 
+# ---- 활동명 보정 맵 (정확 일치 치환) ------------------------------------
+# 방문 기업·기관 + 브랜드 식당·명소는 정확한 영문명으로. 일반 음식(스테이크·쌀국수·BBQ),
+# 현지 식당(동순원), 안내문구(석식·자유식·호텔중식·OT준비), 공항은 한글 유지.
+# 이미 영문(NVIDIA, SK Hynix, BBQ)은 그대로 둔다.
+NAME_MAP = {
+    # 방문 기업·기관
+    "PnP": "Plug and Play",
+    "시스코": "Cisco",
+    "브리즈바이오": "BreezeBio",
+    "구글": "Google",
+    "몰로코": "Moloco",
+    "블룸에너지": "Bloom Energy",
+    "망고부스트": "MangoBoost",
+    "조비": "Joby Aviation",
+    "베어로봇틱": "Bear Robotics",
+    "애플": "Apple",
+    "세일즈포스": "Salesforce",
+    "스탠포드": "Stanford",
+    "UC버클리": "UC Berkeley",
+    "SK Hy 중식": "SK Hynix",
+    # 브랜드 식당·명소
+    "인앤아웃": "In-N-Out",
+    "치폴레": "Chipotle",
+    "피어39 자유식": "Pier 39 (자유식)",
+    "그레이트몰": "Great Mall",
+    "그레이트몰자유식": "Great Mall (자유식)",
+    # 복합/표기 정리
+    "NVIDIA, 베어": "NVIDIA, Bear Robotics",
+    "SK, 엔비디아 드랍": "SK Hynix, NVIDIA (드랍)",
+    # 오타 수정
+    "공창": "공항",
+}
+
 
 # ===========================================================================
 # XLSX 읽기 (표준 라이브러리)
@@ -313,6 +346,7 @@ def build_people(rows, merge_fill):
                 continue
             parsed = parse_activity(cell)
             if parsed:
+                parsed["activity"] = NAME_MAP.get(parsed["activity"], parsed["activity"])
                 d = day_map.setdefault(date, {"date": date, "memo": None, "items": []})
                 d["items"].append({
                     "slot": label,

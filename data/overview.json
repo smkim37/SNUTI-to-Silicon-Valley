@@ -12,14 +12,14 @@
         {
           "slot": "점심",
           "options": [
-            "스탠포드",
+            "Stanford",
             "스테이크"
           ]
         },
         {
           "slot": "석식",
           "options": [
-            "인앤아웃",
+            "In-N-Out",
             "쌀국수",
             "스테이크",
             "동순원",
@@ -48,10 +48,10 @@
         {
           "slot": "오전",
           "options": [
-            "PnP",
-            "망고부스트",
-            "조비",
-            "애플"
+            "Plug and Play",
+            "MangoBoost",
+            "Joby Aviation",
+            "Apple"
           ]
         },
         {
@@ -59,20 +59,20 @@
           "options": [
             "쌀국수",
             "스테이크",
-            "인앤아웃",
+            "In-N-Out",
             "동순원",
-            "SK Hy 중식"
+            "SK Hynix"
           ]
         },
         {
           "slot": "오후",
           "options": [
-            "블룸에너지",
+            "Bloom Energy",
             "NVIDIA",
-            "PnP",
-            "세일즈포스",
+            "Plug and Play",
+            "Salesforce",
             "SK Hynix",
-            "SK, 엔비디아 드랍"
+            "SK Hynix, NVIDIA (드랍)"
           ]
         },
         {
@@ -81,7 +81,7 @@
             "쌀국수",
             "스테이크",
             "동순원",
-            "인앤아웃"
+            "In-N-Out"
           ]
         }
       ],
@@ -115,13 +115,13 @@
         {
           "slot": "점심",
           "options": [
-            "UC버클리"
+            "UC Berkeley"
           ]
         },
         {
           "slot": "석식",
           "options": [
-            "피어39 자유식"
+            "Pier 39 (자유식)"
           ]
         }
       ],
@@ -151,27 +151,27 @@
         {
           "slot": "오전",
           "options": [
-            "브리즈바이오",
-            "시스코",
-            "애플"
+            "BreezeBio",
+            "Cisco",
+            "Apple"
           ]
         },
         {
           "slot": "중식",
           "options": [
-            "그레이트몰",
+            "Great Mall",
             "자유식",
-            "그레이트몰자유식"
+            "Great Mall (자유식)"
           ]
         },
         {
           "slot": "오후",
           "options": [
             "NVIDIA",
-            "베어로봇틱",
-            "구글",
-            "몰로코",
-            "NVIDIA, 베어"
+            "Bear Robotics",
+            "Google",
+            "Moloco",
+            "NVIDIA, Bear Robotics"
           ]
         },
         {
@@ -179,7 +179,7 @@
           "options": [
             "스테이크",
             "동순원",
-            "인앤아웃"
+            "In-N-Out"
           ]
         }
       ],
@@ -209,7 +209,7 @@
         {
           "slot": "점심",
           "options": [
-            "치폴레",
+            "Chipotle",
             "호텔중식"
           ]
         },
@@ -267,8 +267,7 @@
         {
           "slot": "이동",
           "options": [
-            "공항",
-            "공창"
+            "공항"
           ]
         }
       ],
