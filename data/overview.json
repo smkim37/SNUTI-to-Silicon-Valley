@@ -77,18 +77,6 @@
           ]
         }
       ],
-      "common": [
-        {
-          "time": "19:30–20:30",
-          "title": "오리엔테이션",
-          "place": "Grand Ballroom"
-        },
-        {
-          "time": "20:30–21:30",
-          "title": "네트워킹",
-          "place": "Grand Ballroom"
-        }
-      ],
       "memos": []
     },
     {
@@ -158,23 +146,6 @@
           ]
         }
       ],
-      "common": [
-        {
-          "time": "06:00–08:40",
-          "title": "호텔 조식",
-          "place": null
-        },
-        {
-          "time": "19:30–20:30",
-          "title": "Education in AI Era",
-          "place": "Grand Ballroom"
-        },
-        {
-          "time": "20:30–21:30",
-          "title": "네트워킹",
-          "place": "Grand Ballroom"
-        }
-      ],
       "memos": [
         "호텔 차량교체",
         "중식 후\n호텔 대기 후\n바로 \n세일즈포스 \n이동",
@@ -240,23 +211,6 @@
               ]
             }
           ]
-        }
-      ],
-      "common": [
-        {
-          "time": "06:00–08:40",
-          "title": "호텔 조식",
-          "place": null
-        },
-        {
-          "time": "19:30–20:30",
-          "title": "AI-Native",
-          "place": "Grand Ballroom"
-        },
-        {
-          "time": "20:30–21:30",
-          "title": "네트워킹",
-          "place": "Grand Ballroom"
         }
       ],
       "memos": []
@@ -328,23 +282,6 @@
           ]
         }
       ],
-      "common": [
-        {
-          "time": "06:00–08:40",
-          "title": "호텔 조식",
-          "place": null
-        },
-        {
-          "time": "19:30–20:30",
-          "title": "Physical AI",
-          "place": "Grand Ballroom"
-        },
-        {
-          "time": "20:30–21:30",
-          "title": "네트워킹",
-          "place": "Grand Ballroom"
-        }
-      ],
       "memos": []
     },
     {
@@ -409,43 +346,6 @@
           ]
         }
       ],
-      "common": [
-        {
-          "time": "06:00–08:40",
-          "title": "호텔 조식",
-          "place": null
-        },
-        {
-          "time": "09:00–11:30",
-          "title": "해커톤 (디자인씽킹·주제선정)",
-          "place": "Grand Ballroom"
-        },
-        {
-          "time": "12:30–16:00",
-          "title": "해커톤 본선 + 멘토링",
-          "place": "Grand Ballroom"
-        },
-        {
-          "time": "16:00–16:30",
-          "title": "발표회 (조별 4분)",
-          "place": "Grand Ballroom"
-        },
-        {
-          "time": "19:30–20:00",
-          "title": "시상식 (해커톤·전체 시상)",
-          "place": "Grand Ballroom"
-        },
-        {
-          "time": "20:00–21:00",
-          "title": "특별세션: AI 시대 창업 10년의 이야기",
-          "place": "Grand Ballroom"
-        },
-        {
-          "time": "21:00–22:00",
-          "title": "네트워킹",
-          "place": "Grand Ballroom"
-        }
-      ],
       "memos": []
     },
     {
@@ -468,18 +368,6 @@
               "title": "공항 이동 / 출국"
             }
           ]
-        }
-      ],
-      "common": [
-        {
-          "time": "06:00–07:40",
-          "title": "호텔 조식",
-          "place": null
-        },
-        {
-          "time": "—",
-          "title": "공항 이동 / 출국",
-          "place": null
         }
       ],
       "memos": []

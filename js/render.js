@@ -29,5 +29,5 @@ window.App = window.App || {};
     return '<div class="pg-block"><div class="pg-head">' + esc(b.head) + tag + "</div>" + body + "</div>";
   }
 
-  A.render = { chips: chips, programItem: programItem, programBlock: programBlock };
+  A.render = { programBlock: programBlock };
 })(window.App);

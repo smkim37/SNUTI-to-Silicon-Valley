@@ -108,17 +108,11 @@ button{font-family:inherit}
   background:var(--bg-soft);color:var(--muted);border:1px solid var(--line);
 }
 .chip-group{background:var(--teal-soft);color:var(--teal-dark);border-color:transparent}
-.chip-base{background:#eef3ff;color:var(--navy);border-color:transparent}
 
 /* ---- Empty / hint states ---- */
 .state{text-align:center;color:var(--muted);padding:26px 12px}
 .state img{width:140px;margin:0 auto 8px;opacity:.96}
 .state .big{font-size:1.05rem;color:var(--ink);font-weight:700;margin-bottom:2px}
-.hint-actions{margin-top:14px}
-.btn-line{
-  display:inline-block;padding:11px 18px;border-radius:999px;
-  border:1.5px solid var(--teal);color:var(--teal-dark);font-weight:700;background:#fff;
-}
 
 /* ---- Back / notice ---- */
 .back{
@@ -236,9 +230,6 @@ button{font-family:inherit}
 
 /* ---- Overview ---- */
 .ov-day{margin-bottom:16px;padding:0;overflow:hidden}
-.ov-slot{padding:12px 16px}
-.ov-slot + .ov-slot{border-top:1px solid #f1f5f7}
-.ov-slot .s-label{font-size:.82rem;font-weight:700;color:var(--muted);margin-bottom:8px}
 .opts{display:flex;flex-wrap:wrap;gap:7px}
 .opt{
   font-size:.92rem;font-weight:600;background:var(--teal-soft);color:var(--teal-dark);

@@ -67,44 +67,6 @@ SLOTS = [
     (19, "6.28", "이동", False),   # T  6.28 (공항 등)
 ]
 
-# ---- 공통 일정(전체 동일) : 26하계 일정 시트에서 큐레이션한 상수 ----------
-# 이 시트는 병합/오타/줄바꿈이 심하고 강사 연락처가 인접해 자동 파싱 대신
-# 아래 상수로 관리한다(스케줄 변경 시 이 한 곳만 수정).
-COMMON_SCHEDULE = OrderedDict([
-    ("6.23", {"sessions": [
-        {"time": "19:30–20:30", "title": "오리엔테이션", "place": "Grand Ballroom"},
-        {"time": "20:30–21:30", "title": "네트워킹", "place": "Grand Ballroom"},
-    ]}),
-    ("6.24", {"sessions": [
-        {"time": "06:00–08:40", "title": "호텔 조식", "place": None},
-        {"time": "19:30–20:30", "title": "Education in AI Era", "place": "Grand Ballroom"},
-        {"time": "20:30–21:30", "title": "네트워킹", "place": "Grand Ballroom"},
-    ]}),
-    ("6.25", {"sessions": [
-        {"time": "06:00–08:40", "title": "호텔 조식", "place": None},
-        {"time": "19:30–20:30", "title": "AI-Native", "place": "Grand Ballroom"},
-        {"time": "20:30–21:30", "title": "네트워킹", "place": "Grand Ballroom"},
-    ]}),
-    ("6.26", {"sessions": [
-        {"time": "06:00–08:40", "title": "호텔 조식", "place": None},
-        {"time": "19:30–20:30", "title": "Physical AI", "place": "Grand Ballroom"},
-        {"time": "20:30–21:30", "title": "네트워킹", "place": "Grand Ballroom"},
-    ]}),
-    ("6.27", {"sessions": [
-        {"time": "06:00–08:40", "title": "호텔 조식", "place": None},
-        {"time": "09:00–11:30", "title": "해커톤 (디자인씽킹·주제선정)", "place": "Grand Ballroom"},
-        {"time": "12:30–16:00", "title": "해커톤 본선 + 멘토링", "place": "Grand Ballroom"},
-        {"time": "16:00–16:30", "title": "발표회 (조별 4분)", "place": "Grand Ballroom"},
-        {"time": "19:30–20:00", "title": "시상식 (해커톤·전체 시상)", "place": "Grand Ballroom"},
-        {"time": "20:00–21:00", "title": "특별세션: AI 시대 창업 10년의 이야기", "place": "Grand Ballroom"},
-        {"time": "21:00–22:00", "title": "네트워킹", "place": "Grand Ballroom"},
-    ]}),
-    ("6.28", {"sessions": [
-        {"time": "06:00–07:40", "title": "호텔 조식", "place": None},
-        {"time": "—", "title": "공항 이동 / 출국", "place": None},
-    ]}),
-])
-
 # ---- 활동명 보정 맵 (정확 일치 치환) ------------------------------------
 # 방문 기업·기관 + 브랜드 식당·명소는 정확한 영문명으로. 일반 음식(스테이크·쌀국수·BBQ),
 # 현지 식당(동순원), 안내문구(석식·자유식·호텔중식·OT준비), 공항은 한글 유지.
@@ -488,14 +450,13 @@ def build_people(rows, merge_fill):
         "people": people,
     }
 
-    # 전체 일정(설문 기반 프로그램) — common은 개인 페이지(commonByDate)용으로 유지
+    # 전체 일정(설문 기반 큐레이션 프로그램) — 전체 일정 페이지와 개인 페이지(접이식)가 공유
     ov_days = []
     for date in DATE_ORDER:
         ov_days.append({
             "date": date,
             "label": DATE_LABELS[date],
             "program": PROGRAM.get(date, []),
-            "common": COMMON_SCHEDULE.get(date, {}).get("sessions", []),
             "memos": memo_agg.get(date, []),
         })
 
