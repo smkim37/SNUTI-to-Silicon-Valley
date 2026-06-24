@@ -46,7 +46,7 @@ window.App = window.App || {};
     var items = (d.items || []).map(itemRow).join("");
     var program = A.data.programByDate[d.date] || [];
     var programHtml = (program.length && A.render)
-      ? '<details class="day-program"><summary class="dp-toggle">전체 일정<span class="dp-chev">›</span></summary>' +
+      ? '<details class="day-program"><summary class="dp-toggle"><span class="dp-pill">전체 일정<i class="dp-chev"></i></span></summary>' +
         program.map(A.render.programBlock).join("") + "</details>"
       : "";
     return (

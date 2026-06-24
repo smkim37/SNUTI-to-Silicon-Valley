@@ -207,21 +207,32 @@ button{font-family:inherit}
 .bus--x{background:#64748b}   /* 그 외 · 회색 */
 .bus-free{flex:none;font-size:.78rem;font-weight:600;color:var(--muted)}
 
-/* ---- 개인 카드 내 전체 일정(overview program) — 접기/펼치기 토글 ---- */
+/* ---- 개인 카드 내 전체 일정(overview program) — 가운데 토글 버튼 ---- */
 .day-program{border-top:1px dashed var(--line)}
-.day-program[open]{padding-bottom:6px}
+.day-program[open]{padding-bottom:10px}
 .dp-toggle{
   list-style:none;cursor:pointer;user-select:none;
-  display:flex;align-items:center;gap:6px;
-  padding:11px 16px;
-  font-size:.8rem;font-weight:800;color:var(--muted);letter-spacing:.03em;
+  display:flex;justify-content:center;
+  padding:12px 16px;
 }
 .dp-toggle::-webkit-details-marker{display:none}
 .dp-toggle::marker{content:""}
-.dp-toggle:active{background:var(--bg-soft)}
-.dp-chev{margin-left:auto;font-size:1.15rem;font-weight:700;color:var(--teal);
-  line-height:1;transition:transform .18s ease}
-.day-program[open] .dp-chev{transform:rotate(90deg)}
+.dp-pill{
+  display:inline-flex;align-items:center;gap:9px;
+  padding:7px 18px;border-radius:999px;
+  background:#fff;border:1px solid var(--line);color:var(--ink);
+  font-size:.82rem;font-weight:700;letter-spacing:.01em;
+  transition:background .15s ease, border-color .15s ease, transform .08s ease;
+}
+.dp-toggle:active .dp-pill{transform:scale(.97);background:var(--bg-soft)}
+.day-program[open] .dp-pill{background:var(--bg-soft);border-color:transparent}
+.dp-chev{
+  display:inline-block;width:7px;height:7px;
+  border-right:2px solid var(--teal);border-bottom:2px solid var(--teal);
+  transform:rotate(45deg);margin-top:-2px;
+  transition:transform .2s ease;
+}
+.day-program[open] .dp-chev{transform:rotate(225deg);margin-top:2px}
 
 /* ---- Overview ---- */
 .ov-day{margin-bottom:16px;padding:0;overflow:hidden}
