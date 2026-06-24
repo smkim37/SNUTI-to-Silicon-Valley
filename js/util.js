@@ -66,12 +66,19 @@ window.App = window.App || {};
     _toastTimer = setTimeout(function () { t.classList.remove("show"); }, 1800);
   }
 
+  // 기기 로컬 날짜를 데이터 포맷("M.D", 예: "6.25")으로 — 일자 카드의 d.date와 비교용
+  function todayMD() {
+    var t = new Date();
+    return (t.getMonth() + 1) + "." + t.getDate();
+  }
+
   A.util = {
     toChosung: toChosung,
     isChosungQuery: isChosungQuery,
     normalizeQuery: normalizeQuery,
     escapeHtml: escapeHtml,
     nl2br: nl2br,
-    toast: toast
+    toast: toast,
+    todayMD: todayMD
   };
 })(window.App);

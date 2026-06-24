@@ -3,6 +3,7 @@ window.App = window.App || {};
   "use strict";
   A.views = A.views || {};
   var U = A.util, esc = U.escapeHtml;
+  var raf = window.requestAnimationFrame || function (cb) { return setTimeout(cb, 16); };
 
   function busBadge(bus) {
     if (!bus) return '<span class="bus-free">개별/자유</span>';
@@ -40,8 +41,10 @@ window.App = window.App || {};
     return "";
   }
 
-  function dayCard(d) {
+  function dayCard(d, today) {
     var label = A.data.dateLabel[d.date] || d.date;
+    var isToday = d.date === today;
+    var badge = isToday ? '<span class="today-badge">Today</span>' : "";
     var notice = busNoticeHtml(d);
     var items = (d.items || []).map(itemRow).join("");
     var program = A.data.programByDate[d.date] || [];
@@ -50,8 +53,8 @@ window.App = window.App || {};
         program.map(A.render.programBlock).join("") + "</details>"
       : "";
     return (
-      '<section class="day card">' +
-        '<div class="day-head">' + esc(label) + "</div>" +
+      '<section class="day card' + (isToday ? " is-today" : "") + '">' +
+        '<div class="day-head">' + esc(label) + badge + "</div>" +
         notice +
         '<div class="items">' + items + "</div>" +
         programHtml +
@@ -75,7 +78,8 @@ window.App = window.App || {};
     var chips = '<span class="chip chip-group">' + esc(p.groupLabel) + "</span>";
     var alias = p.alias ? '<div class="person-alias">' + esc(p.alias) + "</div>" : "";
 
-    var days = (p.days || []).map(dayCard).join("");
+    var today = U.todayMD();
+    var days = (p.days || []).map(function (d) { return dayCard(d, today); }).join("");
 
     root.innerHTML =
       '<a class="back" href="#/">← 목록</a>' +
@@ -88,6 +92,11 @@ window.App = window.App || {};
       '<div class="legend">🚌 배지는 <b>그 활동의 탑승 호차</b>예요. 활동마다 호차가 다를 수 있으니 꼭 확인하세요!</div>' +
       days +
       '<div class="foot-note">사전교육·항공편 등 프로그램 전체는 <a href="#/overview">전체 일정 보기</a></div>';
+
+    // 행사 기간 중이면 오늘 일자 카드로 스크롤(라우터의 scrollTo(0,0) 다음 프레임에 실행).
+    // 기간 밖이면 today 카드가 없어 그대로 상단부터 표시.
+    var todayEl = root.querySelector(".day.is-today");
+    if (todayEl) raf(function () { todayEl.scrollIntoView({ block: "start" }); });
 
     U.toast("🎉 찾았어요!");
   };

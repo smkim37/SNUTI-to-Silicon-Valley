@@ -159,9 +159,19 @@ button{font-family:inherit}
 /* ---- Day card ---- */
 .day{padding:0;margin-bottom:14px;overflow:hidden}
 .day-head{
+  display:flex;align-items:center;gap:8px;
   font-size:1.06rem;font-weight:800;padding:14px 16px 12px;
   border-bottom:1px solid var(--line);background:linear-gradient(180deg,#fbfdfe,#fff);
 }
+/* 오늘 일자 카드 강조 + Today 배지 */
+.today-badge{
+  margin-left:auto;flex:none;
+  font-size:.66rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;
+  color:#fff;background:var(--teal);padding:3px 9px;border-radius:999px;
+}
+.day.is-today{border-color:var(--teal);box-shadow:0 4px 16px rgba(24,182,190,.16);
+  scroll-margin-top:calc(58px + var(--safe-top))}
+.day.is-today .day-head{background:var(--teal-soft)}
 .memo{
   display:flex;gap:8px;align-items:flex-start;
   margin:12px 16px 0;padding:10px 12px;border-radius:12px;
