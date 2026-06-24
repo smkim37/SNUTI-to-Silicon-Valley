@@ -2,32 +2,81 @@
   "meta": {
     "title": "SNUTI to Silicon Valley",
     "subtitle": "전체 일정 개요",
-    "note": "오전/오후 방문지와 식사는 조·호차마다 다릅니다. 본인 확정 일정은 이름 검색에서 확인하세요."
+    "note": "프로그램 전체 개요입니다. 오전/오후 방문지·식사는 조·호차마다 다르니, 본인 확정 일정과 호차는 이름 검색에서 확인하세요."
   },
+  "preTraining": [
+    {
+      "date": "2026.04.02",
+      "dow": "목",
+      "n": "1차",
+      "theme": "시작"
+    },
+    {
+      "date": "2026.04.30",
+      "dow": "목",
+      "n": "2차",
+      "theme": "디자인 씽킹"
+    },
+    {
+      "date": "2026.05.14",
+      "dow": "목",
+      "n": "3차",
+      "theme": "영감 도전"
+    },
+    {
+      "date": "2026.05.28",
+      "dow": "목",
+      "n": "4차",
+      "theme": "성과 발표"
+    },
+    {
+      "date": "2026.06.11",
+      "dow": "목",
+      "n": "5차",
+      "theme": "곧 출발"
+    }
+  ],
   "days": [
     {
       "date": "6.23",
       "label": "6.23 (화) Day 1",
-      "slots": [
+      "program": [
         {
-          "slot": "점심",
-          "options": [
-            "Stanford",
-            "스테이크"
+          "head": "오후 · 학교 방문",
+          "items": [
+            {
+              "title": "Stanford 캠퍼스 투어",
+              "note": "황준혁, 팽진희"
+            },
+            {
+              "title": "Stanford 특강",
+              "note": "홍성헌"
+            }
           ]
         },
         {
-          "slot": "석식",
-          "options": [
-            "In-N-Out",
-            "쌀국수",
-            "스테이크",
+          "head": "저녁 · 식사",
+          "tag": "조별",
+          "chips": [
             "동순원",
-            "OT준비"
+            "스테이크",
+            "쌀국수",
+            "In-N-Out"
+          ]
+        },
+        {
+          "head": "저녁 · Orientation",
+          "items": [
+            {
+              "title": "Orientation",
+              "parts": [
+                "Part 1 (정윤지, 박세원, 김은기, 이재규)",
+                "Part 2 (박복미 교수님)"
+              ]
+            }
           ]
         }
       ],
-      "memos": [],
       "common": [
         {
           "time": "19:30–20:30",
@@ -39,56 +88,75 @@
           "title": "네트워킹",
           "place": "Grand Ballroom"
         }
-      ]
+      ],
+      "memos": []
     },
     {
       "date": "6.24",
       "label": "6.24 (수) Day 2",
-      "slots": [
+      "program": [
         {
-          "slot": "오전",
-          "options": [
-            "Plug and Play",
-            "MangoBoost",
+          "head": "조식",
+          "items": [
+            {
+              "title": "호텔 조식",
+              "note": "06:00–08:40"
+            }
+          ]
+        },
+        {
+          "head": "오전 · 기업 방문",
+          "chips": [
             "Joby Aviation",
-            "Apple"
-          ]
-        },
-        {
-          "slot": "중식",
-          "options": [
-            "쌀국수",
-            "스테이크",
-            "In-N-Out",
-            "동순원",
-            "SK Hynix"
-          ]
-        },
-        {
-          "slot": "오후",
-          "options": [
-            "Bloom Energy",
-            "NVIDIA",
+            "Apple",
             "Plug and Play",
+            "MangoBoost"
+          ]
+        },
+        {
+          "head": "점심 · 식사",
+          "tag": "조별",
+          "chips": [
+            "동순원",
+            "스테이크",
+            "쌀국수",
+            "In-N-Out",
+            "SK Hynix 중식"
+          ]
+        },
+        {
+          "head": "오후 · 기업 방문",
+          "chips": [
+            "NVIDIA",
             "Salesforce",
             "SK Hynix",
-            "SK Hynix, NVIDIA (드랍)"
+            "Bloom Energy",
+            "Plug and Play"
           ]
         },
         {
-          "slot": "석식",
-          "options": [
-            "쌀국수",
-            "스테이크",
+          "head": "저녁 · 식사",
+          "tag": "조별",
+          "chips": [
             "동순원",
+            "스테이크",
+            "쌀국수",
             "In-N-Out"
           ]
+        },
+        {
+          "head": "저녁 · 강연",
+          "items": [
+            {
+              "title": "Education in AI Era / Free-form",
+              "parts": [
+                "Part 1",
+                "Part 2 (Fireside Chat)",
+                "Part 3 (소그룹 디스커션)"
+              ]
+            }
+          ]
         }
-      ],
-      "memos": [
-        "호텔 차량교체",
-        "중식 후\n호텔 대기 후\n바로 \n세일즈포스 \n이동",
-        "및 마트"
       ],
       "common": [
         {
@@ -106,26 +174,74 @@
           "title": "네트워킹",
           "place": "Grand Ballroom"
         }
+      ],
+      "memos": [
+        "호텔 차량교체",
+        "중식 후\n호텔 대기 후\n바로 \n세일즈포스 \n이동",
+        "및 마트"
       ]
     },
     {
       "date": "6.25",
       "label": "6.25 (목) Day 3",
-      "slots": [
+      "program": [
         {
-          "slot": "점심",
-          "options": [
-            "UC Berkeley"
+          "head": "조식",
+          "items": [
+            {
+              "title": "호텔 조식",
+              "note": "06:00–08:40"
+            }
           ]
         },
         {
-          "slot": "석식",
-          "options": [
-            "Pier 39 (자유식)"
+          "head": "오전 · 학교 방문",
+          "items": [
+            {
+              "title": "UC Berkeley 특강",
+              "note": "이재헌 박사님"
+            },
+            {
+              "title": "UC Berkeley 캠퍼스 투어"
+            }
+          ]
+        },
+        {
+          "head": "점심 · 식사",
+          "chips": [
+            "UC Berkeley 중식"
+          ]
+        },
+        {
+          "head": "오후 · 관광",
+          "chips": [
+            "Golden Gate Bridge",
+            "Palace of Fine Arts",
+            "Ghirardelli Chocolate Experience",
+            "Oracle Park",
+            "Pier 39"
+          ]
+        },
+        {
+          "head": "저녁 · 식사",
+          "chips": [
+            "Pier 39 자유식"
+          ]
+        },
+        {
+          "head": "저녁 · 강연",
+          "items": [
+            {
+              "title": "AI-Native",
+              "parts": [
+                "Part 1 (Panel)",
+                "Part 2 (Fireside Chat)",
+                "Part 3 (Break Out Session)"
+              ]
+            }
           ]
         }
       ],
-      "memos": [],
       "common": [
         {
           "time": "06:00–08:40",
@@ -142,48 +258,76 @@
           "title": "네트워킹",
           "place": "Grand Ballroom"
         }
-      ]
+      ],
+      "memos": []
     },
     {
       "date": "6.26",
       "label": "6.26 (금) Day 4",
-      "slots": [
+      "program": [
         {
-          "slot": "오전",
-          "options": [
+          "head": "조식",
+          "items": [
+            {
+              "title": "호텔 조식",
+              "note": "06:00–08:40"
+            }
+          ]
+        },
+        {
+          "head": "오전 · 기업 방문",
+          "chips": [
             "BreezeBio",
             "Cisco",
             "Apple"
           ]
         },
         {
-          "slot": "중식",
-          "options": [
-            "Great Mall",
-            "자유식",
-            "Great Mall (자유식)"
+          "head": "점심 · 식사",
+          "chips": [
+            "Great Mall"
           ]
         },
         {
-          "slot": "오후",
-          "options": [
+          "head": "오후 · 기업 방문",
+          "chips": [
+            "Google",
             "NVIDIA",
             "Bear Robotics",
-            "Google",
-            "Moloco",
-            "NVIDIA, Bear Robotics"
+            "Moloco"
           ]
         },
         {
-          "slot": "석식",
-          "options": [
-            "스테이크",
+          "head": "오후 · 관광",
+          "chips": [
+            "현지 문화 체험"
+          ]
+        },
+        {
+          "head": "저녁 · 식사",
+          "tag": "조별",
+          "chips": [
             "동순원",
+            "스테이크",
             "In-N-Out"
+          ]
+        },
+        {
+          "head": "저녁 · 강연",
+          "items": [
+            {
+              "title": "Physical AI",
+              "parts": [
+                "Part 1 (How Robotics Got Here, and the Humanoid Bet)",
+                "Part 2 (Putting AI on the Road at Scale)",
+                "Part 3 (Building a New Mode of Transport)",
+                "Part 4 (Q&A)",
+                "Part 5 (Break Out Session)"
+              ]
+            }
           ]
         }
       ],
-      "memos": [],
       "common": [
         {
           "time": "06:00–08:40",
@@ -200,28 +344,71 @@
           "title": "네트워킹",
           "place": "Grand Ballroom"
         }
-      ]
+      ],
+      "memos": []
     },
     {
       "date": "6.27",
       "label": "6.27 (토) Day 5",
-      "slots": [
+      "program": [
         {
-          "slot": "점심",
-          "options": [
-            "Chipotle",
-            "호텔중식"
+          "head": "조식",
+          "items": [
+            {
+              "title": "호텔 조식",
+              "note": "06:00–08:40"
+            }
           ]
         },
         {
-          "slot": "석식",
-          "options": [
-            "BBQ",
-            "석식"
+          "head": "오전 · Ideathon",
+          "items": [
+            {
+              "title": "Ideathon",
+              "parts": [
+                "Part 1 (이재규, 박세원)",
+                "Part 2 (주제 선정)"
+              ]
+            }
+          ]
+        },
+        {
+          "head": "점심 · 식사",
+          "chips": [
+            "Chipotle"
+          ]
+        },
+        {
+          "head": "오후 · Ideathon",
+          "items": [
+            {
+              "title": "Ideathon",
+              "parts": [
+                "Part 3 · 멘토 (박세원, 정윤지, 김은기, 이재규, 김주예, 최인희, 김태훈)",
+                "Part 4 (시상식)"
+              ]
+            }
+          ]
+        },
+        {
+          "head": "저녁 · 식사",
+          "chips": [
+            "BBQ"
+          ]
+        },
+        {
+          "head": "저녁 · 강연",
+          "items": [
+            {
+              "title": "AI 시대에 창업자 옆을 지켜온 10년의 이야기",
+              "parts": [
+                "Part 1 (강연)",
+                "Part 2 (Hackathon Judge)"
+              ]
+            }
           ]
         }
       ],
-      "memos": [],
       "common": [
         {
           "time": "06:00–08:40",
@@ -258,20 +445,31 @@
           "title": "네트워킹",
           "place": "Grand Ballroom"
         }
-      ]
+      ],
+      "memos": []
     },
     {
       "date": "6.28",
       "label": "6.28 (일) Day 6",
-      "slots": [
+      "program": [
         {
-          "slot": "이동",
-          "options": [
-            "공항"
+          "head": "조식",
+          "items": [
+            {
+              "title": "호텔 조식",
+              "note": "06:00–07:40"
+            }
+          ]
+        },
+        {
+          "head": "출국",
+          "items": [
+            {
+              "title": "공항 이동 / 출국"
+            }
           ]
         }
       ],
-      "memos": [],
       "common": [
         {
           "time": "06:00–07:40",
@@ -283,7 +481,8 @@
           "title": "공항 이동 / 출국",
           "place": null
         }
-      ]
+      ],
+      "memos": []
     }
   ]
 }

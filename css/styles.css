@@ -220,6 +220,35 @@ button{font-family:inherit}
 }
 .ov-section-title{font-size:.78rem;font-weight:800;color:var(--muted);padding:12px 16px 0;letter-spacing:.03em}
 
+/* ---- 사전교육 ---- */
+.pt-card{margin-bottom:16px}
+.pt-row{display:flex;align-items:center;gap:10px;padding:10px 16px}
+.pt-row + .pt-row{border-top:1px solid #f1f5f7}
+.pt-date{flex:none;min-width:118px;font-size:.84rem;font-weight:600;color:var(--muted);
+  font-variant-numeric:tabular-nums}
+.pt-n{flex:none;font-size:.78rem;font-weight:800;color:var(--teal-dark);
+  background:var(--teal-soft);padding:3px 9px;border-radius:999px}
+.pt-theme{font-size:1rem;font-weight:700}
+@media (max-width:359px){
+  .pt-row{flex-wrap:wrap;gap:6px}
+  .pt-date{min-width:0;width:100%}
+}
+
+/* ---- 전체 일정 프로그램 블록 ---- */
+.pg-block{padding:11px 16px}
+.pg-block + .pg-block{border-top:1px solid #f1f5f7}
+.pg-head{display:flex;align-items:center;gap:8px;
+  font-size:.8rem;font-weight:800;color:var(--muted);letter-spacing:.02em;margin-bottom:8px}
+.pg-tag{font-size:.7rem;font-weight:700;color:var(--navy);background:#eef3ff;
+  padding:2px 8px;border-radius:999px}
+.pg-item{margin:5px 0}
+.pg-item + .pg-item{margin-top:8px}
+.pg-title{font-size:1.02rem;font-weight:700}
+.pg-note{font-size:.85rem;font-weight:600;color:var(--muted)}
+.pg-parts{list-style:none;margin:6px 0 0;padding:0}
+.pg-parts li{position:relative;padding:3px 0 3px 14px;font-size:.93rem;color:var(--ink)}
+.pg-parts li::before{content:"·";position:absolute;left:3px;color:var(--teal);font-weight:800}
+
 .foot-note{text-align:center;color:var(--muted);font-size:.9rem;margin:18px 4px 4px}
 .foot-note a{color:var(--teal-dark);font-weight:700;text-decoration:underline}
 

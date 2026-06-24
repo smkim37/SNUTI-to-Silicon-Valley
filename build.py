@@ -138,6 +138,98 @@ NAME_MAP = {
     "공창": "공항",
 }
 
+# ---- 전체 일정(프로그램) — 설문 기반 curated 콘텐츠 ----------------------
+# 개인 페이지의 확정 호차와 별개로, 전체 일정 페이지(#/overview)에 보여줄 공통 프로그램.
+# 블록 = {head, chips?[], items?[{title,note?,parts?[]}], tag?}.
+PRE_TRAINING = [
+    {"date": "2026.04.02", "dow": "목", "n": "1차", "theme": "시작"},
+    {"date": "2026.04.30", "dow": "목", "n": "2차", "theme": "디자인 씽킹"},
+    {"date": "2026.05.14", "dow": "목", "n": "3차", "theme": "영감 도전"},
+    {"date": "2026.05.28", "dow": "목", "n": "4차", "theme": "성과 발표"},
+    {"date": "2026.06.11", "dow": "목", "n": "5차", "theme": "곧 출발"},
+]
+
+_BK = lambda t: {"head": "조식", "items": [{"title": "호텔 조식", "note": t}]}
+
+PROGRAM = OrderedDict([
+    ("6.23", [
+        {"head": "오후 · 학교 방문", "items": [
+            {"title": "Stanford 캠퍼스 투어", "note": "황준혁, 팽진희"},
+            {"title": "Stanford 특강", "note": "홍성헌"},
+        ]},
+        {"head": "저녁 · 식사", "tag": "조별", "chips": ["동순원", "스테이크", "쌀국수", "In-N-Out"]},
+        {"head": "저녁 · Orientation", "items": [
+            {"title": "Orientation", "parts": [
+                "Part 1 (정윤지, 박세원, 김은기, 이재규)", "Part 2 (박복미 교수님)"]},
+        ]},
+    ]),
+    ("6.24", [
+        _BK("06:00–08:40"),
+        {"head": "오전 · 기업 방문", "chips": ["Joby Aviation", "Apple", "Plug and Play", "MangoBoost"]},
+        {"head": "점심 · 식사", "tag": "조별",
+         "chips": ["동순원", "스테이크", "쌀국수", "In-N-Out", "SK Hynix 중식"]},
+        {"head": "오후 · 기업 방문",
+         "chips": ["NVIDIA", "Salesforce", "SK Hynix", "Bloom Energy", "Plug and Play"]},
+        {"head": "저녁 · 식사", "tag": "조별", "chips": ["동순원", "스테이크", "쌀국수", "In-N-Out"]},
+        {"head": "저녁 · 강연", "items": [
+            {"title": "Education in AI Era / Free-form", "parts": [
+                "Part 1", "Part 2 (Fireside Chat)", "Part 3 (소그룹 디스커션)"]},
+        ]},
+    ]),
+    ("6.25", [
+        _BK("06:00–08:40"),
+        {"head": "오전 · 학교 방문", "items": [
+            {"title": "UC Berkeley 특강", "note": "이재헌 박사님"},
+            {"title": "UC Berkeley 캠퍼스 투어"},
+        ]},
+        {"head": "점심 · 식사", "chips": ["UC Berkeley 중식"]},
+        {"head": "오후 · 관광", "chips": [
+            "Golden Gate Bridge", "Palace of Fine Arts",
+            "Ghirardelli Chocolate Experience", "Oracle Park", "Pier 39"]},
+        {"head": "저녁 · 식사", "chips": ["Pier 39 자유식"]},
+        {"head": "저녁 · 강연", "items": [
+            {"title": "AI-Native", "parts": [
+                "Part 1 (Panel)", "Part 2 (Fireside Chat)", "Part 3 (Break Out Session)"]},
+        ]},
+    ]),
+    ("6.26", [
+        _BK("06:00–08:40"),
+        {"head": "오전 · 기업 방문", "chips": ["BreezeBio", "Cisco", "Apple"]},
+        {"head": "점심 · 식사", "chips": ["Great Mall"]},
+        {"head": "오후 · 기업 방문", "chips": ["Google", "NVIDIA", "Bear Robotics", "Moloco"]},
+        {"head": "오후 · 관광", "chips": ["현지 문화 체험"]},
+        {"head": "저녁 · 식사", "tag": "조별", "chips": ["동순원", "스테이크", "In-N-Out"]},
+        {"head": "저녁 · 강연", "items": [
+            {"title": "Physical AI", "parts": [
+                "Part 1 (How Robotics Got Here, and the Humanoid Bet)",
+                "Part 2 (Putting AI on the Road at Scale)",
+                "Part 3 (Building a New Mode of Transport)",
+                "Part 4 (Q&A)", "Part 5 (Break Out Session)"]},
+        ]},
+    ]),
+    ("6.27", [
+        _BK("06:00–08:40"),
+        {"head": "오전 · Ideathon", "items": [
+            {"title": "Ideathon", "parts": ["Part 1 (이재규, 박세원)", "Part 2 (주제 선정)"]},
+        ]},
+        {"head": "점심 · 식사", "chips": ["Chipotle"]},
+        {"head": "오후 · Ideathon", "items": [
+            {"title": "Ideathon", "parts": [
+                "Part 3 · 멘토 (박세원, 정윤지, 김은기, 이재규, 김주예, 최인희, 김태훈)",
+                "Part 4 (시상식)"]},
+        ]},
+        {"head": "저녁 · 식사", "chips": ["BBQ"]},
+        {"head": "저녁 · 강연", "items": [
+            {"title": "AI 시대에 창업자 옆을 지켜온 10년의 이야기",
+             "parts": ["Part 1 (강연)", "Part 2 (Hackathon Judge)"]},
+        ]},
+    ]),
+    ("6.28", [
+        _BK("06:00–07:40"),
+        {"head": "출국", "items": [{"title": "공항 이동 / 출국"}]},
+    ]),
+])
+
 
 # ===========================================================================
 # XLSX 읽기 (표준 라이브러리)
@@ -396,32 +488,24 @@ def build_people(rows, merge_fill):
         "people": people,
     }
 
-    # 전체 일정(옵션 집계 + 공통 세션)
+    # 전체 일정(설문 기반 프로그램) — common은 개인 페이지(commonByDate)용으로 유지
     ov_days = []
     for date in DATE_ORDER:
-        slots = []
-        for (ci, d2, label, is_memo) in SLOTS:
-            if d2 == date and not is_memo:
-                opts = agg.get((date, label), [])
-                if opts:
-                    slots.append({"slot": label, "options": opts})
-        memos = memo_agg.get(date, [])
-        common = COMMON_SCHEDULE.get(date, {}).get("sessions", [])
-        if slots or memos or common:
-            ov_days.append({
-                "date": date,
-                "label": DATE_LABELS[date],
-                "slots": slots,
-                "memos": memos,
-                "common": common,
-            })
+        ov_days.append({
+            "date": date,
+            "label": DATE_LABELS[date],
+            "program": PROGRAM.get(date, []),
+            "common": COMMON_SCHEDULE.get(date, {}).get("sessions", []),
+            "memos": memo_agg.get(date, []),
+        })
 
     overview_json = {
         "meta": {
             "title": "SNUTI to Silicon Valley",
             "subtitle": "전체 일정 개요",
-            "note": "오전/오후 방문지와 식사는 조·호차마다 다릅니다. 본인 확정 일정은 이름 검색에서 확인하세요.",
+            "note": "프로그램 전체 개요입니다. 오전/오후 방문지·식사는 조·호차마다 다르니, 본인 확정 일정과 호차는 이름 검색에서 확인하세요.",
         },
+        "preTraining": PRE_TRAINING,
         "days": ov_days,
     }
 

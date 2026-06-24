@@ -4,46 +4,57 @@ window.App = window.App || {};
   A.views = A.views || {};
   var esc = A.util.escapeHtml;
 
-  function slotBlock(s) {
-    var opts = (s.options || []).map(function (o) {
-      return '<span class="opt">' + esc(o) + "</span>";
-    }).join("");
-    return (
-      '<div class="ov-slot">' +
-        '<div class="s-label">' + esc(s.slot) + "</div>" +
-        '<div class="opts">' + opts + "</div>" +
-      "</div>"
-    );
+  function chips(list) {
+    return '<div class="opts">' +
+      list.map(function (o) { return '<span class="opt">' + esc(o) + "</span>"; }).join("") +
+      "</div>";
   }
 
-  function commonRow(c) {
-    var place = c.place ? ' <span class="cplace">@' + esc(c.place) + "</span>" : "";
-    return (
-      '<div class="common-item">' +
-        '<span class="ctime">' + esc(c.time) + "</span>" +
-        '<span class="ctitle">' + esc(c.title) + place + "</span>" +
-      "</div>"
-    );
+  function itemRow(it) {
+    var note = it.note ? ' <span class="pg-note">' + esc(it.note) + "</span>" : "";
+    var parts = (it.parts && it.parts.length)
+      ? '<ul class="pg-parts">' +
+          it.parts.map(function (p) { return "<li>" + esc(p) + "</li>"; }).join("") +
+        "</ul>"
+      : "";
+    return '<div class="pg-item"><span class="pg-title">' + esc(it.title) + "</span>" + note + parts + "</div>";
+  }
+
+  function block(b) {
+    var tag = b.tag ? ' <span class="pg-tag">' + esc(b.tag) + "</span>" : "";
+    var body = "";
+    if (b.chips && b.chips.length) body = chips(b.chips);
+    else if (b.items && b.items.length) body = b.items.map(itemRow).join("");
+    return '<div class="pg-block"><div class="pg-head">' + esc(b.head) + tag + "</div>" + body + "</div>";
   }
 
   function dayCard(d) {
     var memos = (d.memos || []).map(function (m) {
       return '<div class="memo">📌 <span>' + A.util.nl2br(m) + "</span></div>";
     }).join("");
-    var slots = (d.slots || []).map(slotBlock).join("");
-    var common = (d.common || []);
-    var commonHtml = common.length
-      ? '<div class="ov-section-title">전체 공통 일정</div>' +
-        '<div class="ov-slot">' + common.map(commonRow).join("") + "</div>"
-      : "";
-    var optTitle = slots ? '<div class="ov-section-title">그날의 방문/식사 옵션 (조·호차별 상이)</div>' : "";
+    var blocks = (d.program || []).map(block).join("");
     return (
       '<section class="card ov-day">' +
         '<div class="day-head">' + esc(d.label) + "</div>" +
-        memos +
-        commonHtml +
-        optTitle +
-        slots +
+        memos + blocks +
+      "</section>"
+    );
+  }
+
+  function preTraining(list) {
+    if (!list || !list.length) return "";
+    var rows = list.map(function (p) {
+      return (
+        '<div class="pt-row">' +
+          '<span class="pt-date">' + esc(p.date) + " (" + esc(p.dow) + ")</span>" +
+          '<span class="pt-n">' + esc(p.n) + "</span>" +
+          '<span class="pt-theme">' + esc(p.theme) + "</span>" +
+        "</div>"
+      );
+    }).join("");
+    return (
+      '<section class="card pt-card">' +
+        '<div class="day-head">사전교육</div>' + rows +
       "</section>"
     );
   }
@@ -59,6 +70,7 @@ window.App = window.App || {};
         '<h1 class="hero-title">전체 일정</h1>' +
         '<p class="hero-sub">' + esc(note) + "</p>" +
       "</section>" +
+      preTraining(ov.preTraining) +
       days;
   };
 })(window.App);
