@@ -8,7 +8,7 @@ window.App = window.App || {};
     meta: null,
     duplicates: {},
     overview: null,
-    commonByDate: {},
+    programByDate: {},
     dateLabel: {},
     byId: {}
   };
@@ -32,7 +32,7 @@ window.App = window.App || {};
       D.duplicates = pp.duplicates || {};
       D.overview = ov;
       (D.meta.dates || []).forEach(function (d) { D.dateLabel[d.id] = d.label; });
-      (ov.days || []).forEach(function (d) { D.commonByDate[d.date] = d.common || []; });
+      (ov.days || []).forEach(function (d) { D.programByDate[d.date] = d.program || []; });
       D.people.forEach(function (p) { D.byId[p.id] = p; });
       D.loaded = true;
       return D;

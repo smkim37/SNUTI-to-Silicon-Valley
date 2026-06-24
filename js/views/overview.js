@@ -4,35 +4,11 @@ window.App = window.App || {};
   A.views = A.views || {};
   var esc = A.util.escapeHtml;
 
-  function chips(list) {
-    return '<div class="opts">' +
-      list.map(function (o) { return '<span class="opt">' + esc(o) + "</span>"; }).join("") +
-      "</div>";
-  }
-
-  function itemRow(it) {
-    var note = it.note ? ' <span class="pg-note">' + esc(it.note) + "</span>" : "";
-    var parts = (it.parts && it.parts.length)
-      ? '<ul class="pg-parts">' +
-          it.parts.map(function (p) { return "<li>" + esc(p) + "</li>"; }).join("") +
-        "</ul>"
-      : "";
-    return '<div class="pg-item"><span class="pg-title">' + esc(it.title) + "</span>" + note + parts + "</div>";
-  }
-
-  function block(b) {
-    var tag = b.tag ? ' <span class="pg-tag">' + esc(b.tag) + "</span>" : "";
-    var body = "";
-    if (b.chips && b.chips.length) body = chips(b.chips);
-    else if (b.items && b.items.length) body = b.items.map(itemRow).join("");
-    return '<div class="pg-block"><div class="pg-head">' + esc(b.head) + tag + "</div>" + body + "</div>";
-  }
-
   function dayCard(d) {
     var memos = (d.memos || []).map(function (m) {
       return '<div class="memo">📌 <span>' + A.util.nl2br(m) + "</span></div>";
     }).join("");
-    var blocks = (d.program || []).map(block).join("");
+    var blocks = (d.program || []).map(A.render.programBlock).join("");
     return (
       '<section class="card ov-day">' +
         '<div class="day-head">' + esc(d.label) + "</div>" +

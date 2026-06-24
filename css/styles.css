@@ -204,13 +204,8 @@ button{font-family:inherit}
 .bus--x{background:#64748b}   /* 그 외 · 회색 */
 .bus-free{flex:none;font-size:.78rem;font-weight:600;color:var(--muted)}
 
-/* ---- common block (per-day shared sessions) ---- */
-.common-block{margin:4px 12px 14px;border-top:1px dashed var(--line);padding-top:10px}
-.common-title{font-size:.76rem;font-weight:800;color:var(--muted);letter-spacing:.04em;margin:0 4px 6px}
-.common-item{display:flex;gap:10px;padding:6px 4px;font-size:.92rem}
-.common-item .ctime{flex:none;color:var(--teal-dark);font-weight:700;font-variant-numeric:tabular-nums;min-width:96px}
-.common-item .ctitle{color:var(--ink)}
-.cplace{color:var(--muted);font-size:.84rem}
+/* ---- 개인 카드 내 전체 일정(overview program) 섹션 ---- */
+.day-program{border-top:1px dashed var(--line);padding-bottom:6px}
 
 /* ---- Overview ---- */
 .ov-day{margin-bottom:16px;padding:0;overflow:hidden}
