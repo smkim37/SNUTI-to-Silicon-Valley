@@ -4,8 +4,6 @@ window.App = window.App || {};
   A.views = A.views || {};
   var U = A.util, esc = U.escapeHtml;
 
-  var ROLE_LABEL = { student: "학생", professor: "교수", ta: "조교", company: "인솔진" };
-
   function busBadge(bus) {
     if (!bus) return '<span class="bus-free">개별/자유</span>';
     var m = bus.match(/\d+/);          // "3호차"→3, "7VAN"→7
@@ -67,7 +65,6 @@ window.App = window.App || {};
     if (!p) { root.innerHTML = notFound(); return; }
 
     var chips = '<span class="chip chip-group">' + esc(p.groupLabel) + "</span>";
-    if (ROLE_LABEL[p.role]) chips += '<span class="chip chip-role">' + ROLE_LABEL[p.role] + "</span>";
     var alias = p.alias ? '<div class="person-alias">' + esc(p.alias) + "</div>" : "";
 
     var days = (p.days || []).map(dayCard).join("");

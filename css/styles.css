@@ -109,7 +109,6 @@ button{font-family:inherit}
 }
 .chip-group{background:var(--teal-soft);color:var(--teal-dark);border-color:transparent}
 .chip-base{background:#eef3ff;color:var(--navy);border-color:transparent}
-.chip-role{background:#f4f6f8;color:var(--muted)}
 
 /* ---- Empty / hint states ---- */
 .state{text-align:center;color:var(--muted);padding:26px 12px}
