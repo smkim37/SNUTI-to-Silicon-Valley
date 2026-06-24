@@ -6,7 +6,6 @@ window.App = window.App || {};
 
   function chooseCard(p) {
     var chips = '<span class="chip chip-group">' + esc(p.groupLabel) + "</span>";
-    if (p.baseBus) chips += '<span class="chip chip-base">기본 ' + esc(p.baseBus) + "</span>";
     return (
       '<a class="card result" href="#/p/' + p.id + '">' +
         '<div class="r-main">' +

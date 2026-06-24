@@ -182,11 +182,17 @@ button{font-family:inherit}
 .bus{
   flex:none;display:inline-flex;align-items:center;gap:4px;
   font-size:1rem;font-weight:800;color:#fff;
-  background:linear-gradient(135deg,var(--teal),var(--teal-dark));
+  background:#64748b;            /* fallback, 호차별 클래스로 덮어씀 */
   padding:7px 13px;border-radius:999px;
-  box-shadow:0 3px 10px rgba(14,143,150,.32);white-space:nowrap;
+  box-shadow:0 3px 10px rgba(15,27,45,.18);white-space:nowrap;
 }
-.bus.van{background:linear-gradient(135deg,#5566d6,var(--navy));box-shadow:0 3px 10px rgba(27,63,160,.3)}
+/* 호차별 색상 — 배지에 "N호차" 텍스트가 함께 있어 색만으로 구분하지 않음(색맹 대비) */
+.bus--1{background:#0e9aa1}   /* 1호차 · 청록 */
+.bus--2{background:#dd6b20}   /* 2호차 · 주황 */
+.bus--3{background:#6b46d6}   /* 3호차 · 보라 */
+.bus--4{background:#1f9254}   /* 4호차 · 초록 */
+.bus--7{background:#2f4cc0}   /* 7VAN · 인디고 */
+.bus--x{background:#64748b}   /* 그 외 · 회색 */
 .bus-free{flex:none;font-size:.78rem;font-weight:600;color:var(--muted)}
 
 /* ---- common block (per-day shared sessions) ---- */
@@ -307,6 +313,4 @@ button{font-family:inherit}
 .member-btn:active{transform:scale(.97)}
 .member-btn .m-name{flex:1;min-width:0;font-size:1.04rem;font-weight:700;
   white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.member-btn .m-bus{font-size:.7rem;font-weight:700;color:var(--teal-dark);
-  background:var(--teal-soft);padding:2px 7px;border-radius:999px;flex:none}
 .member-btn .m-go{color:var(--teal);font-weight:800;font-size:1.15rem;flex:none}

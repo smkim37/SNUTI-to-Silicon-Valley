@@ -8,8 +8,9 @@ window.App = window.App || {};
 
   function busBadge(bus) {
     if (!bus) return '<span class="bus-free">개별/자유</span>';
-    var van = /VAN/i.test(bus);
-    return '<span class="bus' + (van ? " van" : "") + '">🚌 ' + esc(bus) + "</span>";
+    var m = bus.match(/\d+/);          // "3호차"→3, "7VAN"→7
+    var n = m ? m[0] : "x";
+    return '<span class="bus bus--' + n + '">🚌 ' + esc(bus) + "</span>";
   }
 
   function itemRow(it) {
@@ -66,7 +67,6 @@ window.App = window.App || {};
     if (!p) { root.innerHTML = notFound(); return; }
 
     var chips = '<span class="chip chip-group">' + esc(p.groupLabel) + "</span>";
-    if (p.baseBus) chips += '<span class="chip chip-base">기본 ' + esc(p.baseBus) + "</span>";
     if (ROLE_LABEL[p.role]) chips += '<span class="chip chip-role">' + ROLE_LABEL[p.role] + "</span>";
     var alias = p.alias ? '<div class="person-alias">' + esc(p.alias) + "</div>" : "";
 

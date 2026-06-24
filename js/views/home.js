@@ -13,7 +13,6 @@ window.App = window.App || {};
 
   function personCard(p) {
     var chips = chip(p.groupLabel, "chip-group");
-    if (p.baseBus) chips += chip("기본 " + p.baseBus, "chip-base");
     var alias = p.alias ? '<div class="r-alias">' + esc(p.alias) + "</div>" : "";
     return (
       '<a class="card result" href="#/p/' + p.id + '">' +
@@ -67,11 +66,9 @@ window.App = window.App || {};
 
   function memberPanel(c) {
     var btns = c.members.map(function (m) {
-      var bus = m.baseBus ? '<span class="m-bus">' + esc(m.baseBus) + "</span>" : "";
       return (
         '<a class="member-btn" href="#/p/' + m.id + '">' +
           '<span class="m-name">' + esc(m.name) + "</span>" +
-          bus +
           '<span class="m-go">›</span>' +
         "</a>"
       );
