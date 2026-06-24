@@ -197,18 +197,15 @@ button{font-family:inherit}
 }
 .bus{
   flex:none;display:inline-flex;align-items:center;gap:4px;
-  font-size:1rem;font-weight:800;color:#fff;
-  background:#64748b;            /* fallback, 호차별 클래스로 덮어씀 */
-  padding:7px 13px;border-radius:999px;
-  box-shadow:0 3px 10px rgba(15,27,45,.18);white-space:nowrap;
+  font-size:1.04rem;font-weight:800;white-space:nowrap;color:#475569;
 }
-/* 호차별 색상 — 배지에 "N호차" 텍스트가 함께 있어 색만으로 구분하지 않음(색맹 대비) */
-.bus--1{background:#0e9aa1}   /* 1호차 · 청록 */
-.bus--2{background:#dd6b20}   /* 2호차 · 주황 */
-.bus--3{background:#6b46d6}   /* 3호차 · 보라 */
-.bus--4{background:#1f9254}   /* 4호차 · 초록 */
-.bus--7{background:#2f4cc0}   /* 7VAN · 인디고 */
-.bus--x{background:#64748b}   /* 그 외 · 회색 */
+/* 호차별 색 글자 — 서로 확실히 구분되는 색 조합. "N호차" 텍스트가 함께 있어 색맹도 식별 가능 */
+.bus--1{color:#1d4ed8}   /* 1호차 · 파랑 */
+.bus--2{color:#d9480f}   /* 2호차 · 주황 */
+.bus--3{color:#7c3aed}   /* 3호차 · 보라 */
+.bus--4{color:#15803d}   /* 4호차 · 초록 */
+.bus--7{color:#be123c}   /* 7VAN · 진홍 */
+.bus--x{color:#475569}   /* 그 외 · 회색 */
 .bus-free{flex:none;font-size:.78rem;font-weight:600;color:var(--muted)}
 
 /* ---- 개인 카드 내 전체 일정(overview program) — 가운데 토글 ---- */

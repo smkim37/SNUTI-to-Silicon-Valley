@@ -44,7 +44,7 @@ window.App = window.App || {};
     if (hasChange) {
       var extra = (d.memo && !BUS_CHANGE_MEMO.test(d.memo)) ? "<br>" + U.nl2br(d.memo) : "";
       return '<div class="memo memo-bus">🚌 <span>오늘은 활동마다 탑승 호차가 바뀌어요(<b>차량 교체</b>). ' +
-        "각 활동의 <b>호차 배지를 꼭 확인</b>하세요." + extra + "</span></div>";
+        "각 활동의 <b>호차 표시를 꼭 확인</b>하세요." + extra + "</span></div>";
     }
     if (d.memo) return '<div class="memo">📌 <span>' + U.nl2br(d.memo) + "</span></div>";
     return "";
@@ -98,7 +98,7 @@ window.App = window.App || {};
         alias +
         '<div class="chips">' + chips + "</div>" +
       "</section>" +
-      '<div class="legend">🚌 배지는 <b>그 활동의 탑승 호차</b>예요. 활동마다 호차가 다를 수 있으니 꼭 확인하세요!</div>' +
+      '<div class="legend">🚌 <b>그 활동의 탑승 호차</b>를 색 글자로 표시했어요. 활동마다 다를 수 있으니 꼭 확인하세요!</div>' +
       days +
       '<div class="foot-note">사전교육·항공편 등 프로그램 전체는 <a href="#/overview">전체 일정 보기</a></div>';
 
