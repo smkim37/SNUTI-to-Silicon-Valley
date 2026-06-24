@@ -207,8 +207,8 @@ button{font-family:inherit}
 .bus--x{background:#64748b}   /* 그 외 · 회색 */
 .bus-free{flex:none;font-size:.78rem;font-weight:600;color:var(--muted)}
 
-/* ---- 개인 카드 내 전체 일정(overview program) — 가운데 토글 버튼 ---- */
-.day-program{border-top:1px dashed var(--line)}
+/* ---- 개인 카드 내 전체 일정(overview program) — 파란 배경으로 구분 + 가운데 토글 ---- */
+.day-program{background:#eef3ff;border-top:1px solid #dde6fa}
 .day-program[open]{padding-bottom:10px}
 .dp-toggle{
   list-style:none;cursor:pointer;user-select:none;
@@ -220,15 +220,15 @@ button{font-family:inherit}
 .dp-pill{
   display:inline-flex;align-items:center;gap:9px;
   padding:7px 18px;border-radius:999px;
-  background:#fff;border:1px solid var(--line);color:var(--ink);
+  background:#fff;border:1px solid #d7e0f5;color:var(--navy);
   font-size:.82rem;font-weight:700;letter-spacing:.01em;
-  transition:background .15s ease, border-color .15s ease, transform .08s ease;
+  box-shadow:0 1px 3px rgba(27,63,160,.08);
+  transition:transform .08s ease, background .15s ease;
 }
-.dp-toggle:active .dp-pill{transform:scale(.97);background:var(--bg-soft)}
-.day-program[open] .dp-pill{background:var(--bg-soft);border-color:transparent}
+.dp-toggle:active .dp-pill{transform:scale(.97);background:#f7f9ff}
 .dp-chev{
   display:inline-block;width:7px;height:7px;
-  border-right:2px solid var(--teal);border-bottom:2px solid var(--teal);
+  border-right:2px solid var(--navy);border-bottom:2px solid var(--navy);
   transform:rotate(45deg);margin-top:-2px;
   transition:transform .2s ease;
 }
