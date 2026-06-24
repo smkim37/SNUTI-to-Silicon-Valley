@@ -275,6 +275,58 @@ button{font-family:inherit}
 .foot-note{text-align:center;color:var(--muted);font-size:.9rem;margin:18px 4px 4px}
 .foot-note a{color:var(--teal-dark);font-weight:700;text-decoration:underline}
 
+/* ---- 방문지 정보(돋보기 + 모달) ---- */
+.info-btn{
+  display:inline-flex;align-items:center;justify-content:center;flex:none;
+  width:24px;height:24px;margin-left:1px;padding:0;
+  border:none;background:transparent;color:var(--teal-dark);cursor:pointer;
+  border-radius:8px;-webkit-tap-highlight-color:transparent;
+}
+.info-btn:active{background:var(--teal-soft)}
+.info-btn svg{width:15px;height:15px;display:block}
+
+.pi-overlay{
+  position:fixed;inset:0;z-index:200;
+  display:flex;align-items:flex-end;justify-content:center;
+  background:rgba(15,27,45,.42);opacity:0;pointer-events:none;transition:opacity .22s ease;
+}
+.pi-overlay.show{opacity:1;pointer-events:auto}
+.pi-sheet{
+  position:relative;width:100%;max-width:var(--maxw);
+  background:#fff;border-radius:22px 22px 0 0;
+  padding:10px 18px calc(22px + var(--safe-bottom));
+  box-shadow:0 -10px 40px rgba(15,27,45,.22);
+  transform:translateY(18px);transition:transform .26s cubic-bezier(.22,1,.36,1);
+  max-height:90vh;overflow-y:auto;
+}
+.pi-overlay.show .pi-sheet{transform:translateY(0)}
+.pi-grip{width:38px;height:4px;border-radius:999px;background:var(--line);margin:2px auto 14px}
+.pi-close{
+  position:absolute;top:14px;right:14px;width:30px;height:30px;flex:none;
+  border:none;background:var(--bg-soft);color:var(--muted);border-radius:999px;
+  font-size:.82rem;cursor:pointer;
+}
+.pi-type{
+  display:inline-block;font-size:.7rem;font-weight:800;letter-spacing:.04em;
+  color:var(--teal-dark);background:var(--teal-soft);padding:3px 10px;border-radius:999px;
+}
+.pi-title{font-size:1.32rem;font-weight:800;margin:9px 0 7px;letter-spacing:-.01em}
+.pi-intro{font-size:.96rem;color:var(--ink);margin:0 0 14px;line-height:1.55}
+.pi-why{background:var(--bg-soft);border-radius:14px;padding:12px 14px;margin:0 0 16px}
+.pi-why-label{display:block;font-size:.72rem;font-weight:800;color:var(--teal-dark);
+  letter-spacing:.03em;margin-bottom:4px}
+.pi-why-text{font-size:.92rem;color:var(--ink);line-height:1.55}
+.pi-frame{position:relative;width:100%;aspect-ratio:16/9;border-radius:14px;overflow:hidden;
+  background:#000;box-shadow:0 4px 16px rgba(15,27,45,.14)}
+.pi-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.pi-yt-link{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  padding:13px;border-radius:14px;background:var(--bg-soft);
+  font-weight:700;color:var(--teal-dark);font-size:.94rem;
+}
+.pi-yt-ico{color:#e53935}
+body.pi-lock{overflow:hidden}
+
 /* ---- Footer ---- */
 .appfoot{
   text-align:center;color:#9aa8b6;font-size:.78rem;

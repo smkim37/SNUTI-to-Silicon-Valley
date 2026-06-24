@@ -12,12 +12,21 @@ window.App = window.App || {};
     return '<span class="bus bus--' + n + '">🚌 ' + esc(bus) + "</span>";
   }
 
+  var MAGNIFIER =
+    '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true">' +
+    '<circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2.2"/>' +
+    '<line x1="16.5" y1="16.5" x2="21" y2="21" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>';
+
   function itemRow(it) {
     var note = it.note ? '<span class="note">' + esc(it.note) + "</span>" : "";
+    var info = (A.places && A.places[it.activity])
+      ? '<button type="button" class="info-btn" data-place="' + esc(it.activity) +
+        '" aria-label="' + esc(it.activity) + ' 정보 보기">' + MAGNIFIER + "</button>"
+      : "";
     return (
       '<div class="item">' +
         '<span class="slot">' + esc(it.slot) + "</span>" +
-        '<span class="act">' + esc(it.activity) + note + "</span>" +
+        '<span class="act">' + esc(it.activity) + info + note + "</span>" +
         busBadge(it.bus) +
       "</div>"
     );

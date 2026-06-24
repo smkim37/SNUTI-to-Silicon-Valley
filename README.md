@@ -6,6 +6,7 @@
 
 - 핵심: 호차는 **활동마다 다를 수 있어** 개인 페이지에서 활동별로 호차 배지를 표시합니다.
 - 개인 페이지 = 본인 확정 일정(활동별 호차 배지) + **차량 교체 안내**(그날 호차가 바뀌면 자동 표시) + **접이식 전체 일정**(그날 프로그램).
+- 학교·기업 일정 옆 **돋보기🔎** → 한줄 소개·방문 이유·**공식 유튜브 홍보영상** 팝업(`js/places.js` 큐레이션, 영상은 oEmbed 검증).
 - 모바일 우선(반응형, 큰 탭 영역, iOS safe-area), 흰 배경 + 청록/네이비 포인트, Pretendard.
 - **빌드 단계 없는 순수 정적 사이트** — 배포는 `git push`만 하면 됩니다.
 
@@ -22,7 +23,7 @@
 .
 ├── index.html           # ← 진입점(앱). 루트에 있으므로 README보다 우선 서빙됨
 ├── css/styles.css
-├── js/…                 # util / data / render / search / app + views/*
+├── js/…                 # util / data / render / places / placeinfo / search / app + views/*
 ├── data/                # people.json, overview.json (커밋된 정적 데이터)
 ├── assets/              # 앱에서 쓰는 이미지(로고 + 마스코트)
 ├── .nojekyll            # Jekyll 비활성화(파일 그대로 서빙)
