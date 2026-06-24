@@ -213,21 +213,21 @@ button{font-family:inherit}
 .dp-toggle{
   list-style:none;cursor:pointer;user-select:none;
   display:flex;justify-content:center;
-  padding:12px 16px;
+  padding:11px 16px;
 }
 .dp-toggle::-webkit-details-marker{display:none}
 .dp-toggle::marker{content:""}
 .dp-pill{
-  display:inline-flex;align-items:center;gap:9px;
-  padding:8px 20px;border-radius:999px;
+  display:inline-flex;align-items:center;gap:7px;
+  padding:6px 16px;border-radius:999px;
   background:var(--navy);border:none;color:#fff;
-  font-size:.82rem;font-weight:700;letter-spacing:.01em;
-  box-shadow:0 3px 10px rgba(27,63,160,.22);
+  font-size:.78rem;font-weight:700;letter-spacing:.01em;
+  box-shadow:0 2px 8px rgba(27,63,160,.2);
   transition:transform .08s ease, background .15s ease;
 }
 .dp-toggle:active .dp-pill{transform:scale(.97);background:#16348a}
 .dp-chev{
-  display:inline-block;width:7px;height:7px;
+  display:inline-block;width:6px;height:6px;
   border-right:2px solid #fff;border-bottom:2px solid #fff;
   transform:rotate(45deg);margin-top:-2px;
   transition:transform .2s ease;
