@@ -173,6 +173,9 @@ button{font-family:inherit}
   margin:12px 16px 0;padding:10px 12px;border-radius:12px;
   background:var(--amber-soft);color:var(--amber);font-size:.9rem;font-weight:600;line-height:1.45;
 }
+/* 차량 교체 안내: 중요 단어만 볼드 + 살짝 작은 글씨 */
+.memo-bus{font-size:.82rem;font-weight:500}
+.memo-bus b{font-weight:800}
 .items{padding:6px 8px 8px}
 .item{
   display:flex;align-items:center;gap:10px;

@@ -33,8 +33,8 @@ window.App = window.App || {};
     var hasChange = distinct.length >= 2;
     if (hasChange) {
       var extra = (d.memo && !BUS_CHANGE_MEMO.test(d.memo)) ? "<br>" + U.nl2br(d.memo) : "";
-      return '<div class="memo">🚌 <span>오늘은 활동마다 탑승 호차가 바뀌어요(차량 교체). ' +
-        "각 활동의 호차 배지를 꼭 확인하세요." + extra + "</span></div>";
+      return '<div class="memo memo-bus">🚌 <span>오늘은 활동마다 탑승 호차가 바뀌어요(<b>차량 교체</b>). ' +
+        "각 활동의 <b>호차 배지를 꼭 확인</b>하세요." + extra + "</span></div>";
     }
     if (d.memo) return '<div class="memo">📌 <span>' + U.nl2br(d.memo) + "</span></div>";
     return "";
