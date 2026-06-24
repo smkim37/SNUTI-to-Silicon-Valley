@@ -197,7 +197,7 @@ button{font-family:inherit}
 }
 .bus{
   flex:none;display:inline-flex;align-items:center;gap:4px;
-  font-size:1.04rem;font-weight:800;white-space:nowrap;color:#475569;
+  font-size:.9rem;font-weight:800;white-space:nowrap;color:#475569;
 }
 /* 호차별 색 글자 — 서로 확실히 구분되는 색 조합. "N호차" 텍스트가 함께 있어 색맹도 식별 가능 */
 .bus--1{color:#1d4ed8}   /* 1호차 · 파랑 */
