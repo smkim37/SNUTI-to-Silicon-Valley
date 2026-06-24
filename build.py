@@ -24,9 +24,10 @@ from collections import Counter, OrderedDict
 ROOT = os.path.dirname(os.path.abspath(__file__))
 XLSX = os.path.join(ROOT, "schedule.xlsx")
 ASSETS_SRC = os.path.join(ROOT, "assests")          # 원본 폴더(오타 그대로)
-DOCS = os.path.join(ROOT, "docs")
-DATA_OUT = os.path.join(DOCS, "data")
-ASSETS_OUT = os.path.join(DOCS, "assets")
+# 앱은 저장소 루트에서 서빙된다(Pages 소스 = main/root). build.py는 배포 단계가 아니라
+# 엑셀 갱신 시 로컬에서 데이터를 다시 만들기 위한 도구이며, 산출물을 루트에 쓴다.
+DATA_OUT = os.path.join(ROOT, "data")
+ASSETS_OUT = os.path.join(ROOT, "assets")
 
 SHEET_NAME = "전체명단_0617_v7"
 
@@ -508,9 +509,9 @@ def main():
     copied = copy_assets()
 
     print("생성 완료:")
-    print("  docs/data/people.json   (%d명)" % people_json["meta"]["personCount"])
-    print("  docs/data/overview.json (%d일)" % len(overview_json["days"]))
-    print("  docs/assets/            (%s)" % ", ".join(copied))
+    print("  data/people.json   (%d명)" % people_json["meta"]["personCount"])
+    print("  data/overview.json (%d일)" % len(overview_json["days"]))
+    print("  assets/            (%s)" % ", ".join(copied))
     if warnings:
         print("경고:")
         for w in warnings:
