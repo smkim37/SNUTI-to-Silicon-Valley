@@ -311,11 +311,7 @@ button{font-family:inherit}
   color:var(--teal-dark);background:var(--teal-soft);padding:3px 10px;border-radius:999px;
 }
 .pi-title{font-size:1.32rem;font-weight:800;margin:9px 0 7px;letter-spacing:-.01em}
-.pi-intro{font-size:.96rem;color:var(--ink);margin:0 0 14px;line-height:1.55}
-.pi-why{background:var(--bg-soft);border-radius:14px;padding:12px 14px;margin:0 0 16px}
-.pi-why-label{display:block;font-size:.72rem;font-weight:800;color:var(--teal-dark);
-  letter-spacing:.03em;margin-bottom:4px}
-.pi-why-text{font-size:.92rem;color:var(--ink);line-height:1.55}
+.pi-intro{font-size:.88rem;color:var(--ink);margin:0 0 16px;line-height:1.6}
 .pi-frame{position:relative;width:100%;aspect-ratio:16/9;border-radius:14px;overflow:hidden;
   background:#000;box-shadow:0 4px 16px rgba(15,27,45,.14)}
 .pi-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}

@@ -15,8 +15,6 @@ window.App = window.App || {};
         '<div class="pi-type"></div>' +
         '<h2 class="pi-title" id="pi-title"></h2>' +
         '<p class="pi-intro"></p>' +
-        '<div class="pi-why"><span class="pi-why-label">왜 방문하나요?</span>' +
-          '<span class="pi-why-text"></span></div>' +
         '<div class="pi-video"></div>' +
       "</div>";
     document.body.appendChild(overlay);
@@ -47,7 +45,6 @@ window.App = window.App || {};
     overlay.querySelector(".pi-type").textContent = p.type === "school" ? "학교" : "기업";
     overlay.querySelector(".pi-title").textContent = p.name || key;
     overlay.querySelector(".pi-intro").textContent = p.intro || "";
-    overlay.querySelector(".pi-why-text").textContent = p.why || "";
     overlay.querySelector(".pi-video").innerHTML = videoHtml(p);
     document.body.classList.add("pi-lock");
     void overlay.offsetWidth;            // reflow → 트랜지션
