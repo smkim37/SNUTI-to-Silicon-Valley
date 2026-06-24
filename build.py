@@ -8,14 +8,13 @@ SNUTI to Silicon Valley — schedule.xlsx -> docs/data/*.json 변환기
 일절 포함하지 않는다.
 
 사용법:
-  python3 build.py            # docs/data/*.json + docs/assets/* 생성
+  python3 build.py            # data/*.json 재생성
   python3 build.py --verify   # 쓰기 없이 파싱 검증/요약만 출력
 """
 import argparse
 import json
 import os
 import re
-import shutil
 import sys
 import zipfile
 import xml.etree.ElementTree as ET
@@ -23,11 +22,10 @@ from collections import Counter, OrderedDict
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 XLSX = os.path.join(ROOT, "schedule.xlsx")
-ASSETS_SRC = os.path.join(ROOT, "assests")          # 원본 폴더(오타 그대로)
 # 앱은 저장소 루트에서 서빙된다(Pages 소스 = main/root). build.py는 배포 단계가 아니라
-# 엑셀 갱신 시 로컬에서 데이터를 다시 만들기 위한 도구이며, 산출물을 루트에 쓴다.
+# 엑셀 갱신 시 로컬에서 데이터(JSON)를 다시 만들기 위한 도구이며, 산출물을 루트에 쓴다.
+# 이미지는 assets/ 에 직접 커밋해 관리한다(빌드가 복사하지 않음).
 DATA_OUT = os.path.join(ROOT, "data")
-ASSETS_OUT = os.path.join(ROOT, "assets")
 
 SHEET_NAME = "전체명단_0617_v7"
 
@@ -486,19 +484,6 @@ def assert_no_pii(*objs):
         raise SystemExit("PII 가드 실패 — 출력에 민감정보 의심 패턴 발견: %s" % bad)
 
 
-def copy_assets():
-    os.makedirs(ASSETS_OUT, exist_ok=True)
-    wanted = ["logo.png", "action01.png", "action02.png",
-              "action03.png", "action04.png", "action05.png"]
-    copied = []
-    for fn in wanted:
-        src = os.path.join(ASSETS_SRC, fn)
-        if os.path.exists(src):
-            shutil.copy2(src, os.path.join(ASSETS_OUT, fn))
-            copied.append(fn)
-    return copied
-
-
 # ===========================================================================
 # 검증/요약 출력
 # ===========================================================================
@@ -585,12 +570,10 @@ def main():
         json.dump(people_json, f, ensure_ascii=False, indent=2)
     with open(os.path.join(DATA_OUT, "overview.json"), "w", encoding="utf-8") as f:
         json.dump(overview_json, f, ensure_ascii=False, indent=2)
-    copied = copy_assets()
 
     print("생성 완료:")
     print("  data/people.json   (%d명)" % people_json["meta"]["personCount"])
     print("  data/overview.json (%d일)" % len(overview_json["days"]))
-    print("  assets/            (%s)" % ", ".join(copied))
     if warnings:
         print("경고:")
         for w in warnings:

@@ -28,7 +28,6 @@
 ├── .nojekyll            # Jekyll 비활성화(파일 그대로 서빙)
 ├── robots.txt
 ├── build.py             # (로컬 전용) schedule.xlsx -> data/*.json 재생성 도구
-├── assests/             # 원본 에셋(오타 폴더명 그대로)
 ├── schedule.xlsx        # 원본(개인정보 시트 포함) — .gitignore, 커밋/배포 안 함
 └── README.md
 ```
@@ -74,10 +73,12 @@ git add -A && git commit -m "변경 내용" && git push
 `build.py`는 **배포 도구가 아니라** 엑셀이 갱신됐을 때 JSON을 다시 만드는 로컬 도구입니다.
 
 ```bash
-python3 build.py            # data/*.json + assets/* 재생성(루트에 기록)
+python3 build.py            # data/*.json 재생성(루트에 기록)
 python3 build.py --verify   # 쓰기 없이 파싱 검증/요약만 출력
-git add data assets && git commit -m "데이터 갱신" && git push
+git add data && git commit -m "데이터 갱신" && git push
 ```
+
+> 이미지(로고·마스코트)는 `assets/`에 직접 커밋해 관리합니다(빌드가 복사하지 않음).
 
 > `schedule.xlsx`는 개인정보 시트를 포함하므로 로컬에만 두고 커밋하지 않습니다.
 
