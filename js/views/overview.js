@@ -5,14 +5,11 @@ window.App = window.App || {};
   var esc = A.util.escapeHtml;
 
   function dayCard(d) {
-    var memos = (d.memos || []).map(function (m) {
-      return '<div class="memo">📌 <span>' + A.util.nl2br(m) + "</span></div>";
-    }).join("");
     var blocks = (d.program || []).map(A.render.programBlock).join("");
     return (
       '<section class="card ov-day">' +
         '<div class="day-head">' + esc(d.label) + "</div>" +
-        memos + blocks +
+        blocks +
       "</section>"
     );
   }

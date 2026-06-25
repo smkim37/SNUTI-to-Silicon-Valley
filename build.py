@@ -372,7 +372,6 @@ def build_people(rows, merge_fill):
     agg_keys = [(d, l) for (ci, d, l, m) in SLOTS if not m]
     for k in agg_keys:
         agg[k] = []
-    memo_agg = OrderedDict((d, []) for d in DATE_ORDER)
 
     for r in range(2, max_row + 1):
         name_raw = get(r, 3)
@@ -393,8 +392,6 @@ def build_people(rows, merge_fill):
                 if cell:
                     d = day_map.setdefault(date, {"date": date, "memo": None, "items": []})
                     d["memo"] = cell
-                    if cell not in memo_agg[date]:
-                        memo_agg[date].append(cell)
                 continue
             parsed = parse_activity(cell)
             if parsed:
@@ -455,7 +452,6 @@ def build_people(rows, merge_fill):
             "date": date,
             "label": DATE_LABELS[date],
             "program": PROGRAM.get(date, []),
-            "memos": memo_agg.get(date, []),
         })
 
     overview_json = {
