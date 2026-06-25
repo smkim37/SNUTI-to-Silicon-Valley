@@ -33,23 +33,16 @@ window.App = window.App || {};
   }
 
   // 활동(방문/이동) 레그의 탑승 호차가 2개 이상이면 실제 "차량(호차) 교체"가 있는 날 → 안내.
-  // 식사(점심·석식)만의 호차 차이는 교체가 아니므로 제외(불필요한 안내 방지).
-  var BUS_CHANGE_MEMO = /^\s*호텔?\s*차량\s*교체\s*$/;  // 단순 "호텔 차량교체"는 표준 안내로 흡수(단독 표시 안 함)
+  // 식사(점심·석식)만의 호차 차이는 교체가 아니므로 제외. 수기 메모는 표시하지 않는다(파편/중복 방지).
   var MEAL_SLOTS = { "점심": 1, "석식": 1 };
   function busNoticeHtml(d) {
     var distinct = [];
     (d.items || []).forEach(function (it) {
       if (it.bus && !MEAL_SLOTS[it.slot] && distinct.indexOf(it.bus) < 0) distinct.push(it.bus);
     });
-    var hasChange = distinct.length >= 2;
-    if (hasChange) {
-      var extra = (d.memo && !BUS_CHANGE_MEMO.test(d.memo)) ? "<br>" + U.nl2br(d.memo) : "";
-      return '<div class="memo memo-bus">🚌 <span>오늘은 활동마다 탑승 호차가 바뀌어요(<b>차량 교체</b>). ' +
-        "각 활동의 <b>호차 표시를 꼭 확인</b>하세요." + extra + "</span></div>";
-    }
-    // 단독 "호텔 차량교체" 메모(실제 교체 없음)는 표시하지 않음. 그 외 구체 지시만 표시.
-    if (d.memo && !BUS_CHANGE_MEMO.test(d.memo)) return '<div class="memo">📌 <span>' + U.nl2br(d.memo) + "</span></div>";
-    return "";
+    if (distinct.length < 2) return "";
+    return '<div class="memo memo-bus">🚌 <span>오늘은 활동마다 탑승 호차가 바뀌어요(<b>차량 교체</b>). ' +
+      "각 활동의 <b>호차 표시를 꼭 확인</b>하세요.</span></div>";
   }
 
   function dayCard(d, today) {

@@ -45,10 +45,6 @@ window.App = window.App || {};
     });
   }
 
-  function nl2br(s) {
-    return escapeHtml(s).replace(/\n/g, "<br>");
-  }
-
   var _toastTimer = null;
   function toast(msg) {
     var t = document.getElementById("toast");
@@ -77,7 +73,6 @@ window.App = window.App || {};
     isChosungQuery: isChosungQuery,
     normalizeQuery: normalizeQuery,
     escapeHtml: escapeHtml,
-    nl2br: nl2br,
     toast: toast,
     todayMD: todayMD
   };
