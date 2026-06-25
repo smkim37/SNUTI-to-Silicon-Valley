@@ -353,6 +353,8 @@ body.pi-lock{overflow:hidden}
   position:absolute;top:6px;left:0;width:104px;margin:0;will-change:left,transform;
   animation:fly-x 2.6s linear infinite, fly-bob 1.3s ease-in-out infinite;
 }
+/* 둘째 마스코트: 살짝 앞서며 겹치게(bob 위상차로 층 느낌) → ~1.5마리로 보이게 */
+.hero-compact .hero-fly .hero-mascot--b{animation-delay:-0.34s,-0.45s}
 @keyframes fly-x{from{left:-120px}to{left:100%}}
 @keyframes fly-bob{
   0%,100%{transform:translateY(0) scaleX(-1)}
@@ -361,6 +363,7 @@ body.pi-lock{overflow:hidden}
 @media (prefers-reduced-motion:reduce){
   .hero-compact .hero-fly{height:auto}
   .hero-compact .hero-fly .hero-mascot{position:static;margin:0 auto;animation:none;transform:scaleX(-1)}
+  .hero-compact .hero-fly .hero-mascot--b{display:none}
 }
 .hero-compact .hero-title{font-size:1.28rem;margin:4px 0 2px}
 .hero-compact .hero-sub{font-size:.9rem}
