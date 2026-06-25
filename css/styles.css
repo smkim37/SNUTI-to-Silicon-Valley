@@ -347,6 +347,22 @@ body.pi-lock{overflow:hidden}
 /* ---- 홈 컴팩트 히어로 (검색+조별 한 화면) ---- */
 .hero-compact{padding:6px 8px 0}
 .hero-compact .hero-mascot{width:104px;margin-bottom:0}
+
+/* 홈 마스코트: 좌→우로 가로지르는 비행 + 살짝 위아래 bob (진행 방향 보게 좌우 반전) */
+.hero-compact .hero-fly{position:relative;width:100%;height:96px;overflow:hidden}
+.hero-compact .hero-fly .hero-mascot{
+  position:absolute;top:6px;left:0;width:104px;margin:0;will-change:left,transform;
+  animation:fly-x 2.6s linear infinite, fly-bob 1.3s ease-in-out infinite;
+}
+@keyframes fly-x{from{left:-120px}to{left:100%}}
+@keyframes fly-bob{
+  0%,100%{transform:translateY(0) scaleX(-1)}
+  50%{transform:translateY(-6px) scaleX(-1)}
+}
+@media (prefers-reduced-motion:reduce){
+  .hero-compact .hero-fly{height:auto}
+  .hero-compact .hero-fly .hero-mascot{position:static;margin:0 auto;animation:none;transform:scaleX(-1)}
+}
 .hero-compact .hero-title{font-size:1.28rem;margin:4px 0 2px}
 .hero-compact .hero-sub{font-size:.9rem}
 

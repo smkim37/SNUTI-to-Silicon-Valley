@@ -149,7 +149,7 @@ window.App = window.App || {};
   A.views.home = function (root) {
     root.innerHTML =
       '<section class="hero hero-compact">' +
-        '<img class="hero-mascot" src="./assets/action04.png" alt="">' +
+        '<div class="hero-fly"><img class="hero-mascot" src="./assets/action04.png" alt=""></div>' +
         '<h1 class="hero-title">내 일정 · 호차 찾기</h1>' +
         '<p class="hero-sub">이름을 검색하거나 <b>조를 눌러</b> 본인을 찾아보세요.</p>' +
       "</section>" +
