@@ -65,6 +65,4 @@ window.App = window.App || {};
     e.preventDefault();
     open(btn.getAttribute("data-place"));
   });
-
-  A.placeInfo = { open: open, close: close };
 })(window.App);

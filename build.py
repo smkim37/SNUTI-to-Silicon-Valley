@@ -15,7 +15,6 @@ import argparse
 import json
 import os
 import re
-import sys
 import zipfile
 import xml.etree.ElementTree as ET
 from collections import Counter, OrderedDict
@@ -366,7 +365,7 @@ def build_people(rows, merge_fill):
                 warnings.append("I열 헤더가 예상('버스 교체')과 다름: %r" % header)
             continue
         # 헤더에 날짜가 들어있는지(R열은 비어있을 수 있음)
-        if header and date.replace(".", ".") not in header and ci != 17:
+        if header and date not in header and ci != 17:
             warnings.append("%d열 헤더 %r 에 날짜 %s 없음" % (ci, header, date))
 
     people = []
