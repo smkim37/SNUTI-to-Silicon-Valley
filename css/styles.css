@@ -169,7 +169,7 @@ button{font-family:inherit}
   color:#fff;background:var(--teal);padding:3px 9px;border-radius:999px;
 }
 .day.is-today{border-color:var(--teal);box-shadow:0 4px 16px rgba(24,182,190,.16);
-  scroll-margin-top:calc(58px + var(--safe-top))}
+  scroll-margin-top:25vh}   /* 진입 시 오늘 카드를 상단~중간의 중간(≈25%)에 위치 */
 .day.is-today .day-head{background:var(--teal-soft)}
 .memo{
   display:flex;gap:8px;align-items:flex-start;
