@@ -370,11 +370,6 @@ def build_people(rows, merge_fill):
             warnings.append("%d열 헤더 %r 에 날짜 %s 없음" % (ci, header, date))
 
     people = []
-    # 집계용
-    agg = OrderedDict()       # (date,label) -> [활동...]
-    agg_keys = [(d, l) for (ci, d, l, m) in SLOTS if not m]
-    for k in agg_keys:
-        agg[k] = []
 
     for r in range(2, max_row + 1):
         name_raw = get(r, 3)
@@ -406,8 +401,6 @@ def build_people(rows, merge_fill):
                     "bus": parsed["bus"],
                     "note": parsed["note"],
                 })
-                if parsed["activity"] not in agg[(date, label)]:
-                    agg[(date, label)].append(parsed["activity"])
 
         days = []
         for date in DATE_ORDER:

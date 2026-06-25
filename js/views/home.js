@@ -204,7 +204,4 @@ window.App = window.App || {};
       input.focus();
     }
   };
-
-  // 테스트용 내부 노출(무해)
-  A.views._browse = { buildBrowse: buildBrowse, memberPanel: memberPanel };
 })(window.App);

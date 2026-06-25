@@ -68,7 +68,7 @@ window.App = window.App || {};
       var members = arr.slice().sort(function (a, b) {
         return a.name.localeCompare(b.name, "ko");
       }).map(function (p) {
-        return { id: p.id, name: p.name, baseBus: p.baseBus };
+        return { id: p.id, name: p.name };
       });
       return {
         key: key,
