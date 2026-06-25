@@ -85,7 +85,6 @@ window.App = window.App || {};
     if (!p) { root.innerHTML = notFound(); return; }
 
     var chips = '<span class="chip chip-group">' + esc(p.groupLabel) + "</span>";
-    var alias = p.alias ? '<div class="person-alias">' + esc(p.alias) + "</div>" : "";
 
     var today = U.todayMD();
     var days = (p.days || []).map(function (d) { return dayCard(d, today); }).join("");
@@ -95,7 +94,6 @@ window.App = window.App || {};
       '<section class="person-head card">' +
         '<img class="celebrate" src="./assets/action05.png" alt="">' +
         '<div class="person-name">' + esc(p.name) + "</div>" +
-        alias +
         '<div class="chips">' + chips + "</div>" +
       "</section>" +
       '<div class="legend">🚌 <b>그 활동의 탑승 호차</b>를 색 글자로 표시했어요. 활동마다 다를 수 있으니 꼭 확인하세요!</div>' +

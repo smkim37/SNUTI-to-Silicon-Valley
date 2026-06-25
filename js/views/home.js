@@ -13,12 +13,10 @@ window.App = window.App || {};
 
   function personCard(p) {
     var chips = chip(p.groupLabel, "chip-group");
-    var alias = p.alias ? '<div class="r-alias">' + esc(p.alias) + "</div>" : "";
     return (
       '<a class="card result" href="#/p/' + p.id + '">' +
         '<div class="r-main">' +
           '<div class="r-name">' + esc(p.name) + "</div>" +
-          alias +
           '<div class="r-chips">' + chips + "</div>" +
         "</div>" +
         '<span class="chev">›</span>' +

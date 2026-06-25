@@ -142,7 +142,6 @@ button{font-family:inherit}
   width:110px;height:auto;opacity:.95;pointer-events:none;
 }
 .person-name{font-size:1.9rem;font-weight:800;letter-spacing:-.02em;line-height:1.15}
-.person-alias{color:var(--muted);font-size:.95rem;margin-top:2px}
 .person-head .chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
 .person-head .chip{font-size:.9rem;padding:6px 12px}
 @media (max-width:359px){

@@ -29,6 +29,9 @@ DATA_OUT = os.path.join(ROOT, "data")
 
 SHEET_NAME = "전체명단_0617_v7"
 
+# 버스교체 메모칸에 섞여 들어온 무의미한 조각(표시하지 않음)
+IGNORE_MEMOS = {"및 마트"}
+
 NS = "{http://schemas.openxmlformats.org/spreadsheetml/2006/main}"
 RNS = "{http://schemas.openxmlformats.org/officeDocument/2006/relationships}"
 
@@ -389,7 +392,7 @@ def build_people(rows, merge_fill):
         for (ci, date, label, is_memo) in SLOTS:
             cell = get(r, ci)
             if is_memo:
-                if cell:
+                if cell and cell.strip() not in IGNORE_MEMOS:
                     d = day_map.setdefault(date, {"date": date, "memo": None, "items": []})
                     d["memo"] = cell
                 continue
